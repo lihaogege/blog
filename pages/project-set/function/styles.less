@@ -1,0 +1,45 @@
+.fade-enter {
+  /*入场*/
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+.fade-enter-done {
+  opacity: 1;
+}
+.fade-exit {
+  /*出场*/
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.fade-exit-done {
+  opacity: 0;
+}
+
+.btn-enter {
+  opacity: 0;
+  transform: translateX(100%)
+}
+
+.btn-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1s, transform 1s
+}
+
+.btn-exit {
+  opacity: 1;
+  transform: translateX(0)
+}
+
+.btn-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1s, transform 1s;
+}
+

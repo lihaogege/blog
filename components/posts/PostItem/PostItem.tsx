@@ -25,7 +25,7 @@ const PostItem:NextPage<PropsType> = (props) => {
     });
 
     const imagePath =image ?  `/images/posts/${catalogueName}/${slug}/${image}` : null
-    const linkPath = `/posts/${slug}`
+    const linkPath = `/posts/${catalogueName}/${slug}`
     return (
         <li className={classes.post}>
             <Link href={linkPath}>

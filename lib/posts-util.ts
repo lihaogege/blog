@@ -54,3 +54,7 @@ export const getFeaturePosts = ()=>{
     // const featurePosts = allPosts.filter((post: { isFeatured: boolean; }) => post.isFeatured)
     return allPosts
 }
+
+// export const getPostsDetails = () =>{
+//     const posts = getPostData(fileName)
+// }

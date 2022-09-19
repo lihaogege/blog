@@ -25,7 +25,7 @@ isFeatured: true
 ------ api   // api路由
 ------ contact // 联系我们页面
 ------ posts   // 全部帖子页面
---------- [slug].tsx // 帖子详情页组件
+--------- [...slug].tsx // 帖子详情页组件
 --- posts // 帖子的MD文件
 ------ ...文章
 --- public // 公共文件

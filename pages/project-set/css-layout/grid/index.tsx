@@ -6,21 +6,25 @@ const Index = () => {
             case 1:{
                return (
                  <>
-                     <p className={classes.info}>8列 auto <hr/> 2行 第一行100px 第二行200px</p>
+                     <p className={classes.info}>8列 auto // 2行 第一行100px 第二行200px</p>
                  </>
                )
             }
             case 2:{
                 return (
                     <>
-                        <p className={classes.info}>左70% 右30% <hr/>行高auto</p>
+                        <p className={classes.info}>左70% 右30%</p>
+                        <hr/>
+                        <p>
+                         `   `行高auto
+                        </p>
                     </>
                 )
             }
             case 3:{
                 return (
                     <>
-                        <p className={classes.info}>9列 每列1fr 最大列宽<hr/> 2行 第一行100px 第二行200px</p>
+                        <p className={classes.info}>9列 每列1fr 最大列宽 2行 第一行100px 第二行200px</p>
                     </>
                 )
             }
@@ -32,7 +36,7 @@ const Index = () => {
                             grid-column-gap 属性，
                             grid-gap 属性
                         </p>
-                        <p className={classes.info}>列和列的间隔30<hr/>行和行的间隔30</p>
+                        <p className={classes.info}>列和列的间隔30  ///   行和行的间隔30</p>
                     </>
                 )
             }
@@ -52,7 +56,7 @@ const Index = () => {
         let arrayData = []
         for(let i = 1 ; i < 9 ; i++){
             arrayData.push(
-               <React.Fragment>
+               <React.Fragment key={i}>
                    <p className={classes.title}>第{i}个案例</p>
                    {showStateTitleHandler(i)}
                    <ul className={`${classes[`grid-ul-${i}`]} ${classes["ul"]}`}>

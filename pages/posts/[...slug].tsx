@@ -5,6 +5,7 @@ import Head from "next/head";
 import React from "react";
 
 const PostDetailPage = (props:{post:any})=>{
+    console.log(props)
     return (
         <>
             <Head>
@@ -19,7 +20,8 @@ export const getStaticProps = (context: { params: any; }) => {
     const {params} = context;
     const {slug} = params;
 
-    const postData = getPostData(slug)
+    const postData = getPostData(slug[0])
+    console.log(postData)
     return{
         props:{
             post:postData
@@ -28,10 +30,7 @@ export const getStaticProps = (context: { params: any; }) => {
     }
 }
 
-export function getStaticPaths(){
-    // const postFilenames = getPostsFiles()
-    // const slugs = postFilenames.map(fileName => fileName.replace(/\.md$/, ''))
-    // slugs.map(slug => {params :{slug:slug}})
+export function getStaticPaths(context:{params:any}){
     return{
         paths:[],
         fallback:'blocking'

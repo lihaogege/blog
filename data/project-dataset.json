@@ -6,8 +6,18 @@
     "img":"https://www.cdcxhl.com/upload/pic1/102703_911.jpg"
   },
   {
-    "projectName":"canvas动态柱形图",
-    "href":"/project-set/canvas",
+    "projectName":"grid网格布局",
+    "href":"/project-set/css-layout/grid-layout",
+    "img":"https://medtion-image.medtion.com/uploads/1/image/public/202208/20220829114954_2leufc42gb.jpg"
+  },
+  {
+    "projectName":"自定义封装方法",
+    "href":"/project-set/function",
+    "img":"https://medtion-image.medtion.com/uploads/1/image/public/202208/20220829114954_2leufc42gb.jpg"
+  },
+  {
+    "projectName":"react动画库 react spring",
+    "href":"/project-set/react-spring",
     "img":"https://medtion-image.medtion.com/uploads/1/image/public/202208/20220829114954_2leufc42gb.jpg"
   }
 ]

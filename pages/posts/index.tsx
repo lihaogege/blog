@@ -15,6 +15,7 @@ interface PostsType {
     date: string
 }
 const AllPostsPage = (props: { posts: [],test:[] }) => {
+    console.log(props.posts)
     return (
         <>
             <Head>

@@ -6,6 +6,7 @@ interface PropsType {
     image:string | null
 }
 const PostHeader = (props:PropsType) => {
+    console.log(props)
     const {title,image} = props
     return (
         <header className={classes.header}>
