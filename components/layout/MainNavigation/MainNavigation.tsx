@@ -5,8 +5,8 @@ import classes from './MainNavigation.module.less'
 
 const NavList = [
     {navName: "帖子", href: "/posts"},
-    {navName: "联系我", href: "/contact"},
     {navName: "项目集", href: "/project-set"},
+    {navName: "联系我", href: "/contact"},
 ]
 const MainNavigation = () => {
     return (
