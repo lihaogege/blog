@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Link from "next/link"
 import Logo from "../Logo/Logo"
 import classes from './MainNavigation.module.less'
@@ -9,8 +9,43 @@ const NavList = [
     {navName: "联系我", href: "/contact"},
 ]
 const MainNavigation = () => {
+    let  scrollTopValue = 0
+    const [headerStyles,setheaderStyles] = React.useState({})
+    const footerBox = document.querySelector("footer")
+    console.log(footerBox)
+    const handleScroll = (event:any) => {
+        // 滚动的高度
+        const scrollTop = (event.srcElement ? event.srcElement.scrollTop : false)
+            || window.pageYOffset
+            || (event.srcElement ? event.srcElement.scrollTop : 0);
+        console.log(scrollTopValue,scrollTop)
+        if(scrollTopValue <= scrollTop){
+            console.log("向下")
+            console.log(footerBox)
+            footerBox ? footerBox.style ="transform:translateY(0%)" : null
+            setheaderStyles({
+                transform: "translateY(-100%)"
+            })
+        }else{
+            footerBox ? footerBox.style = "transform:none" : null
+
+            setheaderStyles({
+                transform: "none"
+            })
+        }
+        scrollTopValue = scrollTop
+        return scrollTop;
+    }
+
+
+    useEffect(()=>{
+        window.addEventListener("scroll", handleScroll,true)
+        return () => {
+            window.removeEventListener("scroll", handleScroll,true)
+        }
+    },[])
     return (
-        <header className={classes.header}>
+        <header style={headerStyles} className={classes.header}>
             <Link href={"/"}>
                 {/*
                   如果 Link中的子元素不是文本的话 需要用a标签把它设置为锚链接

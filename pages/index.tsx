@@ -8,7 +8,7 @@ import {getFeaturePosts} from "../lib/posts-util";
 import {userInfo} from "../api/api";
 import {useEffect} from "react";
 import {useCookie} from "next-cookie";
-
+import Subject from "../components/page/home-page/Subject/Subject"
 /**
  * 页面组件的焦点相对较小, 不要在页面组件中放太多的内容
  */
@@ -41,7 +41,8 @@ const Home: NextPage = (props:any) => {
            <title>{"Rick's "}</title>
            <meta name="description" content="blog"/>
        </Head>
-     <Hero/><FeaturedPosts posts={props.posts}/>
+     {/*<Hero/><FeaturedPosts posts={props.posts}/>*/}
+       <Subject></Subject>
    </>
   )
 }

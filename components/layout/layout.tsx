@@ -1,6 +1,7 @@
 import React from 'react';
 import {Fragment} from "react";
 import MainNavigation from "./MainNavigation/MainNavigation";
+import MainFooter from "./MainFooter/MainFooter";
 import {NextPage} from "next";
 
 // 定义形参的类型
@@ -14,6 +15,7 @@ const Layout:NextPage<PropsType> = (props) => {
             <main>
                 {props.children}
             </main>
+            <MainFooter/>
         </Fragment>
     );
 };

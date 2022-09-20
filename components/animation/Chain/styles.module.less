@@ -1,0 +1,36 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  grid-gap: 25px;
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  will-change: width, height;
+  .container-h1{
+    transition: all 4s;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  will-change: transform, opacity;
+}
