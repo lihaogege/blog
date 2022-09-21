@@ -1,7 +1,7 @@
 .header {
   width: 100vw;
-  height: 5rem;
-  background-color: rgba(0,0,0,0.2);
+  height: 4rem;
+  background-color: rgba(0,0,0,0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,9 +9,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999999;
+  z-index: 3000;
   transition: all .6s;
   transform: none;
+  background-image: radial-gradient(transparent 1px,#000000 1px);
+  background-size: 4px 4px;
+  backdrop-filter: saturate(50%) blur(4px);
+  border-bottom: 2px solid black;
 }
 
 .header ul {

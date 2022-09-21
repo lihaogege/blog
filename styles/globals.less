@@ -9,19 +9,6 @@ main,#__next {
   width: 100%;
 }
 
-body {
-  font-family: system-ui;
-  margin: 0;
-}
-
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-}
-
-
-
 
 // 覆盖antd主题
 @primary-color: #ffffff; // 全局主色
@@ -38,8 +25,12 @@ body {
 @border-color-base: #d9d9d9; // 边框色
 @box-shadow-base: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
 0 9px 28px 8px rgba(0, 0, 0, 0.05); // 浮层阴影
-@font-family : "Microsoft YaHei", serif;
+@font-family : 黑体, serif;
 //@line-height-base : 1.6; // 行高
+
+table{
+
+}
 
 body{
   --color-grey-50: hsl(265, 55%, 96%);
@@ -81,19 +72,4 @@ body{
 
   background-color: var(--color-grey-500);
   overflow-wrap:break-word;
-}
-
-h1,
-h2,
-h3 {
-  font-family: 'Oswald', 'Roboto', sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-  cursor: pointer;
 }

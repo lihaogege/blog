@@ -7,27 +7,25 @@ const NavList = [
     {navName: "帖子", href: "/posts"},
     {navName: "项目集", href: "/project-set"},
     {navName: "联系我", href: "/contact"},
+    {navName: "搜索", href: "/contact"},
 ]
 const MainNavigation = () => {
-    let  scrollTopValue = 0
-    const [headerStyles,setheaderStyles] = React.useState({})
-    const footerBox = document.querySelector("footer")
-    console.log(footerBox)
-    const handleScroll = (event:any) => {
+    let scrollTopValue = 0
+    const [headerStyles, setheaderStyles] = React.useState({})
+
+    const handleScroll = (event: any) => {
+        const footerBox: any = document.querySelector("footer")
         // 滚动的高度
         const scrollTop = (event.srcElement ? event.srcElement.scrollTop : false)
             || window.pageYOffset
             || (event.srcElement ? event.srcElement.scrollTop : 0);
-        console.log(scrollTopValue,scrollTop)
-        if(scrollTopValue <= scrollTop){
-            console.log("向下")
-            console.log(footerBox)
-            footerBox ? footerBox.style ="transform:translateY(0%)" : null
+        if (scrollTopValue <= scrollTop) {
+            footerBox ? footerBox.style.transform = "translateY(0%)" : null
             setheaderStyles({
                 transform: "translateY(-100%)"
             })
-        }else{
-            footerBox ? footerBox.style = "transform:none" : null
+        } else {
+            footerBox ? footerBox.style = "transform:translateY(100%)" : null
 
             setheaderStyles({
                 transform: "none"
@@ -38,12 +36,12 @@ const MainNavigation = () => {
     }
 
 
-    useEffect(()=>{
-        window.addEventListener("scroll", handleScroll,true)
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll, true)
         return () => {
-            window.removeEventListener("scroll", handleScroll,true)
+            window.removeEventListener("scroll", handleScroll, true)
         }
-    },[])
+    }, [])
     return (
         <header style={headerStyles} className={classes.header}>
             <Link href={"/"}>
@@ -57,7 +55,7 @@ const MainNavigation = () => {
             </Link>
             <nav>
                 <ul>
-                    {NavList.map((item:any,index)=>(
+                    {NavList.map((item: any, index) => (
                         <li key={index}>
                             <Link href={item.href}>
                                 {item.navName}

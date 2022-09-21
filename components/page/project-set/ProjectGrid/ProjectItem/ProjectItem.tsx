@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import Card from "../../../../animation/Card/Card";
 interface PropsType{
     href:string,
     projectName:string,
@@ -11,6 +12,11 @@ const ProjectItem = (props:PropsType) => {
     console.log(img)
     return (
         <li>
+            <Card>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </Card>
             <Link href={href}>
                 {/*
                   如果 Link中的子元素不是文本的话 需要用a标签把它设置为锚链接

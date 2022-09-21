@@ -1,7 +1,7 @@
 ---
-title: '博客项目创建指南'
+title: 'ThinkPHP框架'
 date: '2022-8/15 17:56'
-excerpt: 利用Nextjs,react,redux,typescript,RTK,RTKQ等技术搭建的博客项目,供大家参考指正
+excerpt: ThinkPHP框架可以用于什么类型得项目开发?
 isFeatured: true
 ---
 

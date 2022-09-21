@@ -4,6 +4,7 @@ import PostHeader from "../PostHeader/PostHeader";
 import ReactMarkdown from "react-markdown"; // markdown包
 import Image from "next/image";
 import {useRouter} from "next/router";
+import gfm from 'remark-gfm'
 // @ts-ignore
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter" // 代码高亮包
 // @ts-ignore
@@ -63,19 +64,28 @@ const PostContent = (props: PropsType) => {
 
             return <p>{paragraph.children}</p>;
         },
-        code(code: any):any {
-            const {language, value} = code;
-            // eslint-disable-next-line react/no-children-prop
-            return <SyntaxHighlighter style={atomDark} language={language} children={value}/>
+        code({node, inline, className, children, ...props} : {node:any,inline:any,className:string}) {
+            const match = /language-(\w+)/.exec(className || '')
+            return !inline && match ? (
+                <SyntaxHighlighter
+                    children={String(children).replace(/\n$/, '')}
+                    style={atomDark}
+                    language={match[1]}
+                    PreTag="div"
+                    {...props}
+                />
+            ) : (
+                <code className={className} {...props}>
+                    {children}
+                </code>
+            )
         }
     }
 
     return (
         <article className={classes.content}>
             <PostHeader title={postData.title} image={imagePath}/>
-            <ReactMarkdown renderers={customRenderers}>
-                {postData.content}
-            </ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[gfm]} children={postData.content} components={customRenderers}/>
         </article>
     );
 };

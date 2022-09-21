@@ -1,8 +1,8 @@
 ---
-title: '博客项目创建指南'
+title: 'ThinkPhP扩展'
 date: '2022-8/15 17:56'
-excerpt: 利用Nextjs,react,redux,typescript,RTK,RTKQ等技术搭建的博客项目,供大家参考指正
-isFeatured: true
+excerpt: 网络应用程序架构：客户端/服务器,设计模式...
+isFeatured: false
 ---
 
 # 扩展

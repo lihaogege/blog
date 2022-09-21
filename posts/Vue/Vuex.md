@@ -1,8 +1,8 @@
 ---
-title: '博客项目创建指南'
+title: 'Vuex'
 date: '2022-8/15 17:56'
-excerpt: 利用Nextjs,react,redux,typescript,RTK,RTKQ等技术搭建的博客项目,供大家参考指正
-isFeatured: true
+excerpt: Vuex 是适用于 Vue.js 应用的状态管理库，为应用中的所有组件提供集中式的状态存储与操作，保证了所有状态以可预测的方式进行修改...
+isFeatured: false
 ---
 
 # Vuex

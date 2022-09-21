@@ -1,8 +1,8 @@
 ---
-title: '博客项目创建指南'
+title: 'JS小技巧'
 date: '2022-8/15 17:56'
-excerpt: 利用Nextjs,react,redux,typescript,RTK,RTKQ等技术搭建的博客项目,供大家参考指正
-isFeatured: true
+excerpt: 怎么给scrrollTo 加一个过渡的效果
+isFeatured: false
 ---
 
 # JS小技巧

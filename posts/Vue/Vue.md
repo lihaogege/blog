@@ -1,7 +1,7 @@
 ---
-title: '博客项目创建指南'
+title: '前端主流三大框架之VUE'
 date: '2022-8/15 17:56'
-excerpt: 利用Nextjs,react,redux,typescript,RTK,RTKQ等技术搭建的博客项目,供大家参考指正
+excerpt: Vue是一个基于JavaScript开发的MVVM库，是一套构建用户界面的渐进式框架。它是以数据驱动和组件化的思想构建的，采用自底向上增量开发的设计。
 isFeatured: true
 ---
 
