@@ -1,3 +1,50 @@
+.article-classification{
+  position: relative;
+  width: 90%;
+  margin: -60px auto 0;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%) !important;
+  background-color: var(--color-grey-100);
+  z-index: 2;
+  padding: 24px;
+  box-sizing: border-box;
+  h2{
+    margin-bottom: 25px;
+    color: #3C4858;
+    font-size: 1.85rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  .classification-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(100px,auto));
+    justify-content: center;
+    align-items: center;
+    grid-gap: 20px 30px;
+    li{
+      user-select: none;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 3px 5px rgb(0 0 0 / 12%);
+      background: #E8F8F5;
+      display: inline-grid;
+      padding: 10px 0;
+      transition: all .6s;
+      &:hover{
+        color: #fff;
+        background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
+      }
+    }
+    .is-active{
+      color: #FFF !important;
+      background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%) !important;
+    }
+
+  }
+}
 .posts {
   width: 95%;
   max-width: 95%;

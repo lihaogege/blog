@@ -9,7 +9,9 @@ import gfm from 'remark-gfm'
 import {PrismLight as SyntaxHighlighter} from "react-syntax-highlighter" // 代码高亮包
 // @ts-ignore
 import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
-
+import PostDemoButton from "../PostDemoButton/PostDemoButton";
+import { Anchor,Affix } from 'antd';
+const { Link } = Anchor;
 interface PropsType {
     post: {
         slug: string,
@@ -20,30 +22,29 @@ interface PropsType {
 }
 
 const PostContent = (props: PropsType) => {
-    let {post}:any = props;
-    const [postData,setPostData] = React.useState<any>({})
-    const router:any = useRouter()
-    console.log(router)
+
+    const [catalogue,setCatalogue] = React.useState('')
+
     React.useEffect(()=>{
-        post.posts.forEach((item:any)=>{
-            if(item.slug === router.query.slug[1]){
-                setPostData(item)
-            }
-        })
+        const h1:any = document.querySelectorAll("h1")
+        console.log(h1)
+        const h2 = document.querySelectorAll("h2")
+        const h3 = document.querySelectorAll("h3")
+        let array = []
+        for(let i = 0 ; i < h1.length ; i++){
+            array.push(h1[i].innerText)
+
+        }
+        console.log(catalogue)
     },[])
-
-    console.log(postData)
-
-    const imagePath =postData.image ?  `/images/posts/${postData['slug']}/${postData.image}` : null
-
+    let {title,date,excerpt,isFeatured,image,classify,content,codeDemo}:any = props.post;
+    const imagePath =image ?  `/images/posts/${classify}/${date}/${image}` : null
+    const codeDemoUrl = codeDemo ?  `/posts/code-demo/${classify}/${codeDemo}` : ""
     type ParagraphType = {
         node: any,
         children: any
     }
     const customRenderers = {
-        // image(image:{alt:string,src:string}){
-        //     return <Image src={image.src} alt={image.alt} width={600} height={300}/>
-        // },
         paragraph(paragraph: ParagraphType) {
             const {node} = paragraph;
 
@@ -53,7 +54,7 @@ const PostContent = (props: PropsType) => {
                 return (
                     <div className={classes.image}>
                         <Image
-                            src={`/images/posts/${postData.slug}${image.url}`}
+                            src={`/images/posts/${classify}${date}/${image}`}
                             alt={image.alt}
                             width={600}
                             height={300}
@@ -79,14 +80,64 @@ const PostContent = (props: PropsType) => {
                     {children}
                 </code>
             )
+        },
+        h1:({level,children }:{children:any,level:any})=>{
+           return (
+               <h1 id={`h1-${children}`}>
+                   <a href={"#h1-"+children}>
+                       <b>一 , {children}</b>
+                   </a>
+               </h1>
+           )
+        },
+        h2:({level,children }:{children:any,level:any})=>{
+            return (
+                <h2 id={`h2-${children}`}>
+                    <a href={"#h2-"+children}>
+                        <b>二 , {children}</b>
+                    </a>
+                </h2>
+            )
+        },
+        h3:({level,children }:{children:any,level:any})=>{
+            return (
+                <h3 id={`h3-${children}`}>
+                    <a href={"#h3-"+children}>
+                        <b>三 , {children}</b>
+                    </a>
+                </h3>
+            )
         }
     }
 
     return (
-        <article className={classes.content}>
-            <PostHeader title={postData.title} image={imagePath}/>
-            <ReactMarkdown remarkPlugins={[gfm]} children={postData.content} components={customRenderers}/>
-        </article>
+        <>
+            <div className={classes.container}>
+                <section className={classes["container-left"]}>
+                    <article className={classes.content}>
+                        <PostHeader title={title} image={imagePath}/>
+                        <ReactMarkdown remarkPlugins={[gfm]} children={content} components={customRenderers}/>
+                    </article>
+                </section>
+                <section className={classes["container-right"]}>
+                    <section>
+                        <Affix offsetTop={88}>
+                            <PostDemoButton codeDemoUrl={codeDemoUrl}/>
+                        </Affix>
+                    </section>
+                   <section className={classes["container-right-bookmark"]}>
+                           <Anchor offsetTop={250}>
+                               <Link href="#components-anchor-demo-basic" title="Basic demo" />
+                               <Link href="#components-anchor-demo-static" title="Static demo" />
+                               <Link href="#API" title="API">
+                                   <Link href="#Anchor-Props" title="Anchor Props" />
+                                   <Link href="#Link-Props" title="Link Props" />
+                               </Link>
+                           </Anchor>
+                   </section>
+                </section>
+            </div>
+        </>
     );
 };
 

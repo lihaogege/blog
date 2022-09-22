@@ -2,7 +2,8 @@
 title: 'ThinkPHP框架'
 date: '2022-8/15 17:56'
 excerpt: 为什么选择ThinkPHP框架?
-isFeatured: true
+isFeatured: false
+classify: 'PHP'
 ---
 
 # ThinkPHP框架

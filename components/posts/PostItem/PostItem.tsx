@@ -10,22 +10,22 @@ type PropsType = {
         image:'',
         excerpt:'',
         date:'',
-        slug:''
+        slug:'',
+        classify:''
     },
-    catalogueName:string
 }
 const PostItem:NextPage<PropsType> = (props) => {
-    const {catalogueName} = props;
-    const { title, image, excerpt , date , slug } = props.post;
+    const { title, image, excerpt , date ,classify } = props.post;
 
-    const formattedDate = new Date(date).toLocaleDateString('zh-cn',{
-        day:'numeric',
-        month:'long',
-        year:'numeric'
-    });
+    var tradeDate = (new Date()).toLocaleDateString().split('/');
+    console.log(tradeDate)
+    var year = tradeDate[0];
+    var month = tradeDate[1];
+    var day = tradeDate[2];
+    const formattedDate = year + '-' + month  + '-' + day;;
 
-    const imagePath =image ?  `/images/posts/${catalogueName}/${slug}/${image}` : null
-    const linkPath = `/posts/${catalogueName}/${slug}`
+    const imagePath =image ?  `/images/posts/${classify}/${date}/${image}` : null
+    const linkPath = `/posts/${formattedDate}/${classify}/${title}`
     return (
         <li className={classes.post}>
             <Link href={linkPath}>

@@ -3,6 +3,7 @@ title: 'Vuex'
 date: '2022-8/15 17:56'
 excerpt: Vuex 是适用于 Vue.js 应用的状态管理库，为应用中的所有组件提供集中式的状态存储与操作，保证了所有状态以可预测的方式进行修改...
 isFeatured: false
+classify: 'Vue'
 ---
 
 # Vuex

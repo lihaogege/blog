@@ -1,11 +1,9 @@
 import React from 'react';
-import {NextPage} from "next";
 import Allposts from "../../components/posts/Allposts/Allposts";
+import HeaderBg from "../../components/page/posts/HeaderBg/HeaderBg"
 import Head from "next/head";
 import {getAllPosts} from "../../lib/posts-util";
-import { Anchor } from 'antd';
-const { Link } = Anchor;
-import classes from "/styles/page/posts/posts_index.module.less"
+import styles from "/styles/page/posts/posts_index.module.less"
 // 声明对象数组
 interface PostsType {
     slug: string,
@@ -15,16 +13,19 @@ interface PostsType {
     date: string
 }
 const AllPostsPage = (props: { posts: [],test:[] }) => {
-    console.log(props.posts)
+    React.useEffect(()=>{
+        const header:any = document.querySelector("header")
+        header.style.background = "rgba(0,0,0,0)"
+        header.style.backdropFilter = "none"
+        header.style.borderBottom = "none"
+    },[])
     return (
         <>
             <Head>
-                <title>{"所有帖子"}</title>
+                <title>{"博客文章"}</title>
                 <meta name="description" content="All blog"/>
             </Head>
-            <Anchor affix={false} showInkInFixed={true} className={classes.Anchor}>
-                {props.posts.map((item:any,index)=> <Link key={index} href={"#"+item.catalogueName} title={item.catalogueName} />)}
-            </Anchor>
+            <HeaderBg/>
             <Allposts posts={props.posts}/>
         </>
     );

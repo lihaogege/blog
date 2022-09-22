@@ -2,7 +2,8 @@
 title: 'VUE连接后台相关问题(可忽略)'
 date: '2022-8/15 17:56'
 excerpt: 作者自己的问题小结
-isFeatured: true
+isFeatured: false
+classify: 'Vue'
 ---
 
 # 问题

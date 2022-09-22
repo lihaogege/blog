@@ -30,27 +30,24 @@ const DUMMY_POSTS:PostsType[] = [
 const Home: NextPage = (props:any) => {
 
    useEffect(()=>{
-       useCookie().set("LOGIN_UNIQUE_TOKEN","eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NDQ1MyIsImlhdCI6MTY0NjcyMDk0M30._tIpCArxOJ8YqiAryzYpx9T5NYDUkd3DwctyISf1_ec")
-       userInfo().then(res=>{
-           console.log(res)
-       })
+       // useCookie().set("LOGIN_UNIQUE_TOKEN","eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NDQ1MyIsImlhdCI6MTY0NjcyMDk0M30._tIpCArxOJ8YqiAryzYpx9T5NYDUkd3DwctyISf1_ec")
+       // userInfo().then(res=>{
+       //     console.log(res)
+       // })
    },[])
   return (
    <> {/* Fragment 在碎片中可以有多个节点*/}
        <Head>
-           <title>{"Rick's "}</title>
-           <meta name="description" content="blog"/>
+           <title>{"Rick's blog"}</title>
+           <meta name="description" content="李昊翰的博客,个人博客,博客"/>
        </Head>
-     {/*<Hero/><FeaturedPosts posts={props.posts}/>*/}
-       <Subject></Subject>
+       <Subject/>
    </>
   )
 }
 
 export const getStaticProps  = () =>{
     const featuredPosts = DUMMY_POSTS
-
-    const test = getFeaturePosts()
     return{
         props:{
             posts:featuredPosts

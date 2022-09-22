@@ -3,6 +3,7 @@ title: 'ThinkPhP扩展'
 date: '2022-8/15 17:56'
 excerpt: 网络应用程序架构：客户端/服务器,设计模式...
 isFeatured: false
+classify: 'PHP'
 ---
 
 # 扩展

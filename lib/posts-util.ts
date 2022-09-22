@@ -12,6 +12,17 @@ export function getPostsCatalogue(){
   return fs.readdirSync(getDirectory('posts')) // 获取所有路径
 }
 
+export const getPostDetail = (catalogueName:string,postName:string) =>{
+    const filePath = path.join(getDirectory("posts/"+catalogueName), `${postName}.md`)
+    const fileContent = fs.readFileSync(filePath, 'utf-8')
+    // matter 这个模块 可以分开 哪些是md文件的变量 哪些是内容
+    const {data, content} = matter(fileContent)
+    return {
+        ...data,
+        content
+    }
+}
+
 export const getPostData = (CatalogueName: string) => {
     // 读取文件
     const postCatalogue = fs.readdirSync(getDirectory("posts/"+CatalogueName))
@@ -25,7 +36,6 @@ export const getPostData = (CatalogueName: string) => {
         // matter 这个模块 可以分开 哪些是md文件的变量 哪些是内容
         const {data, content} = matter(fileContent)
         postDataArray.push({
-            slug: postSlug,
             ...data,
             content
         })
@@ -39,12 +49,12 @@ export const getPostData = (CatalogueName: string) => {
 export const getAllPosts = () => {
     // 读取文件
     const postCatalogue: any = getPostsCatalogue()
-
     const allPosts = postCatalogue.map((CatalogueFile: string) => {
         return getPostData(CatalogueFile)
     })
 
     const sortedPosts = allPosts.sort((postA: { date: number; }, postB: { date: number; }) => postA.date > postB.date ? -1 : 1)
+
     return allPosts
 }
 

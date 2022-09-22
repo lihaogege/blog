@@ -11,7 +11,7 @@ const PostHeader = (props:PropsType) => {
     return (
         <header className={classes.header}>
             <h1>{title}</h1>
-            {image && <Image src={image} alt={"error"} width={200} height={150}/>}
+            {image && <Image src={image} alt={"error"} width={400} height={170}/>}
         </header>
     );
 };

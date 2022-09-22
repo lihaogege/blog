@@ -3,6 +3,7 @@ title: 'Vue-Router'
 date: '2022-8/15 17:56'
 excerpt: 路由的概念最开始是由后端提出来的，在以前用模板引擎开发页面的时候，是使用路由返回不同的页面...
 isFeatured: true
+classify: 'Vue'
 ---
 
 # Vue

@@ -5,13 +5,12 @@ import PostItem from "../PostItem/PostItem";
 
 type PropsType = {
     posts: Array<object>
-    catalogueName:string
 }
 const PostsGrid: NextPage<PropsType> = (props) => {
-    const {posts,catalogueName} = props;
+    const {posts} = props;
     return (
         <ul className={classes.grid}>
-            {posts.map((post:any,index:number) => <PostItem key={index} post={post} catalogueName={catalogueName}/>)}
+            {posts.map((post:any,index:number) => <PostItem key={index} post={post} />)}
         </ul>
     );
 };

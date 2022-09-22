@@ -1,9 +1,11 @@
 ---
-title: 'CSS属性小结'
-date: '2022-8/15'
+title: 'CSS补充属性'
+date: '2022-9-22'
 excerpt: CSS属性知识
 isFeatured: true
-image:
+image: css.jpg
+classify: 'CSS'
+codeDemo: html-css3 
 ---
 
 # 盒子撑大问题的解决方法

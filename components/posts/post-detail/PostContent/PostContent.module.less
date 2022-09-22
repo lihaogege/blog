@@ -1,12 +1,23 @@
+.container{
+  width: 90%;
+  margin: var(--size-22) auto 0;
+  display: grid;
+  grid-template-columns: 75% 22%;
+  justify-content: space-between;
+  .container-left{
+
+  }
+  .container-right{
+    .container-right-bookmark div{
+      //background-color: var(--color-grey-100);
+    }
+  }
+}
 .content {
-  width: 95%;
-  max-width: 75rem;
-  margin: var(--size-8) auto;
   font-size: var(--size-5);
   line-height: var(--size-8);
   background-color: var(--color-grey-100);
   border-radius: 6px;
-  padding: var(--size-4);
 }
 
 .content p {
@@ -93,6 +104,8 @@
   width: 100%;
   max-width: 600px;
 }
+
+
 
 @media (min-width: 768px) {
   .content {

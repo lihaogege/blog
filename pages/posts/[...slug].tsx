@@ -1,9 +1,8 @@
 import {NextPage} from "next";
 import PostContent from "../../components/posts/post-detail/PostContent/PostContent";
-import {getPostData} from "../../lib/posts-util";
+import { getPostDetail} from "../../lib/posts-util";
 import Head from "next/head";
 import React from "react";
-
 const PostDetailPage = (props:{post:any})=>{
     console.log(props)
     return (
@@ -13,14 +12,16 @@ const PostDetailPage = (props:{post:any})=>{
                 <meta name="description" content={props.post.excerpt}/>
             </Head>
             <PostContent post={props.post}/>
+
         </>
     )
 }
 export const getStaticProps = (context: { params: any; }) => {
+    console.log(context)
     const {params} = context;
     const {slug} = params;
 
-    const postData = getPostData(slug[0])
+    const postData = getPostDetail(slug[1],slug[2])
     console.log(postData)
     return{
         props:{

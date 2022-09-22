@@ -1,9 +1,10 @@
 ---
-title: '什么是HTML5?'
-date: '2021/9/21'
+title: 'HTML5CSS3'
+date: '2022-9-22'
 excerpt: HTML5 是最新的 HTML 标准。HTML5 是专门为承载丰富的 web 内容而设计的，并且无需额外插件。HTML5 是跨平台的，被设计为在不同类型的硬件（PC、平板、手机、电视机等等）之上运行。
 isFeatured: false
-image:
+image: html5.jpg
+classify: 'CSS'
 ---
 
 # HTML5

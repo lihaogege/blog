@@ -3,6 +3,7 @@ title: '数据库-MySql'
 date: '2022-8/15 17:56'
 excerpt: 数据库存储,MySQL数据库的小结
 isFeatured: false
+classify: 'MySql'
 ---
 
 # 数据库

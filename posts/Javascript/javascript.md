@@ -3,6 +3,7 @@ title: 'js诞生记'
 date: '2022-10-16 10:57'
 excerpt: js诞生于1995年,由设计师Brendan Eich用了10天时间开发出来,借用了C语言的基本语法,java语言的数据类型和内存机制,Scheme语言的函数式编程,Self语言的基于prototype原型继承的机制,最终诞生了javascript,但是java和js就像雷锋和雷峰塔一样,两者是独立的两门开发语言,
 isFeatured: false
+classify: 'Javascript'
 ---
 
 # javascript
