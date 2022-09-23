@@ -20,7 +20,7 @@ export const getStaticProps = (context: { params: any; }) => {
     const {slug} = params;
     console.log(slug)
     // const postData = getPostDetail(slug[1],slug[2])
-    console.log(params)
+    // console.log(postData)
 
     return{
         props:{
