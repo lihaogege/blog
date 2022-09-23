@@ -18,9 +18,9 @@ const PostDetailPage = (props:{post:any})=>{
 export const getStaticProps = (context: { params: any; }) => {
     const {params} = context;
     const {slug} = params;
-
-    const postData = getPostDetail(slug[1],slug[2])
-    console.log(postData)
+    console.log(slug)
+    // const postData = getPostDetail(slug[1],slug[2])
+    console.log(params)
 
     return{
         props:{
