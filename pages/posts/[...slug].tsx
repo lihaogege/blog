@@ -29,11 +29,4 @@ export const getStaticProps = (context: { params: any; }) => {
         revalidate:600
     }
 }
-
-export function getStaticPaths(context:{params:any}){
-    return{
-        paths:[],
-        fallback:'blocking'
-    }
-}
 export default PostDetailPage;
