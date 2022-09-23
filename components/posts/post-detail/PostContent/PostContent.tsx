@@ -112,32 +112,32 @@ const PostContent = (props: PropsType) => {
 
     return (
         <>
-            <div className={classes.container}>
-                <section className={classes["container-left"]}>
-                    <article className={classes.content}>
-                        <PostHeader title={title} image={imagePath}/>
+            {/*<div className={classes.container}>*/}
+            {/*    <section className={classes["container-left"]}>*/}
+            {/*        <article className={classes.content}>*/}
+            {/*            <PostHeader title={title} image={imagePath}/>*/}
                         {/*// @ts-ignore*/}
-                        <ReactMarkdown remarkPlugins={[gfm]} components={customRenderers}>{content}</ReactMarkdown>
-                    </article>
-                </section>
-                <section className={classes["container-right"]}>
-                    <section>
-                        <Affix offsetTop={88}>
-                            <PostDemoButton codeDemoUrl={codeDemoUrl}/>
-                        </Affix>
-                    </section>
-                   <section className={classes["container-right-bookmark"]}>
-                           <Anchor offsetTop={250}>
-                               <Link href="#components-anchor-demo-basic" title="Basic demo" />
-                               <Link href="#components-anchor-demo-static" title="Static demo" />
-                               <Link href="#API" title="API">
-                                   <Link href="#Anchor-Props" title="Anchor Props" />
-                                   <Link href="#Link-Props" title="Link Props" />
-                               </Link>
-                           </Anchor>
-                   </section>
-                </section>
-            </div>
+            {/*            <ReactMarkdown remarkPlugins={[gfm]} components={customRenderers}>{content}</ReactMarkdown>*/}
+            {/*        </article>*/}
+            {/*    </section>*/}
+            {/*    <section className={classes["container-right"]}>*/}
+            {/*        <section>*/}
+            {/*            <Affix offsetTop={88}>*/}
+            {/*                <PostDemoButton codeDemoUrl={codeDemoUrl}/>*/}
+            {/*            </Affix>*/}
+            {/*        </section>*/}
+            {/*       <section className={classes["container-right-bookmark"]}>*/}
+            {/*               <Anchor offsetTop={250}>*/}
+            {/*                   <Link href="#components-anchor-demo-basic" title="Basic demo" />*/}
+            {/*                   <Link href="#components-anchor-demo-static" title="Static demo" />*/}
+            {/*                   <Link href="#API" title="API">*/}
+            {/*                       <Link href="#Anchor-Props" title="Anchor Props" />*/}
+            {/*                       <Link href="#Link-Props" title="Link Props" />*/}
+            {/*                   </Link>*/}
+            {/*               </Anchor>*/}
+            {/*       </section>*/}
+            {/*    </section>*/}
+            {/*</div>*/}
         </>
     );
 };
