@@ -7,7 +7,6 @@ const ContactPage = () => {
         <>
             <Head>
                 <title>{"联系我"}</title>
-                <meta name="description" content="blog"/>
             </Head>
             <ContactForm/>
         </>

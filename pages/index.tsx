@@ -36,11 +36,8 @@ const Home: NextPage = (props:any) => {
        // })
    },[])
   return (
-   <> {/* Fragment 在碎片中可以有多个节点*/}
-       <Head>
-           <title>{"Rick's blog"}</title>
-           <meta name="description" content="李昊翰的博客,个人博客,博客"/>
-       </Head>
+   <>
+       {/* Fragment 在碎片中可以有多个节点*/}
        <Subject/>
    </>
   )
