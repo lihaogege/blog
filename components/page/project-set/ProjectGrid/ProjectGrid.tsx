@@ -11,7 +11,7 @@ const ProjectGrid = () => {
     },[projectDataSet])
     return (
         <ul className={classes["project-grid"]}>
-            {projectDataSet.map(item=><CardsStack key={item.href}></CardsStack>)}
+            {projectDataSet.map((item,index)=><CardsStack key={index}></CardsStack>)}
             {/*{projectDataSet.map((item:any,index)=><ProjectItem key={index} href={item.href} projectName={item.projectName} img={item.img} />)}*/}
         </ul>
     );

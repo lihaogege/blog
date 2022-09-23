@@ -22,7 +22,9 @@ const Index = () => {
             </section>
             <section className={styles["animation-item"]}>
                 <h2>卡片</h2>
-                <Card></Card>
+                <Card>
+                    <h1>123</h1>
+                </Card>
             </section>
             <section className={styles["animation-item"]}>
                 <h2>轮播</h2>
@@ -34,7 +36,9 @@ const Index = () => {
             </section>
             <section className={styles["animation-item"]}>
                 <h2>字体痕迹</h2>
-                <Trail></Trail>
+                <Trail>
+                    <h1>123</h1>
+                </Trail>
             </section>
             <section className={styles["animation-item"]}>
                 <h2>垂直视差</h2>

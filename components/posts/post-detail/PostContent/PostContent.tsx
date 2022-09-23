@@ -65,16 +65,17 @@ const PostContent = (props: PropsType) => {
 
             return <p>{paragraph.children}</p>;
         },
-        code({node, inline, className, children, ...props} : {node:any,inline:any,className:string}) {
+        code({node, inline, className, children, ...props} : {node:any,inline:any,className:string,children:any}) {
             const match = /language-(\w+)/.exec(className || '')
             return !inline && match ? (
                 <SyntaxHighlighter
-                    children={String(children).replace(/\n$/, '')}
                     style={atomDark}
                     language={match[1]}
                     PreTag="div"
                     {...props}
-                />
+                >
+                    {String(children).replace(/\n$/, '')}
+                </SyntaxHighlighter>
             ) : (
                 <code className={className} {...props}>
                     {children}
@@ -110,13 +111,15 @@ const PostContent = (props: PropsType) => {
         }
     }
 
+
     return (
         <>
             <div className={classes.container}>
                 <section className={classes["container-left"]}>
                     <article className={classes.content}>
                         <PostHeader title={title} image={imagePath}/>
-                        <ReactMarkdown remarkPlugins={[gfm]} children={content} components={customRenderers}/>
+                        {/*// @ts-ignore*/}
+                        <ReactMarkdown remarkPlugins={[gfm]} components={customRenderers}>{content}</ReactMarkdown>
                     </article>
                 </section>
                 <section className={classes["container-right"]}>

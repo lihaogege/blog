@@ -52,8 +52,7 @@ function DraggableList({ items }: { items: string[] }) {
                         y,
                         scale,
                     }}
-                    children={items[i]}
-                />
+                >{items[i]}</animated.div>
             ))}
         </div>
     )
