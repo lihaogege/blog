@@ -20,9 +20,11 @@ export const getStaticProps = (context: { params: any; }) => {
     const {slug} = params;
 
     const postData = getPostDetail(slug[1],slug[2])
+    console.log(postData)
+
     return{
         props:{
-            post:postData
+            post:[]
         },
         revalidate:600
     }
