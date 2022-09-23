@@ -4,7 +4,6 @@ import { getPostDetail} from "../../lib/posts-util";
 import Head from "next/head";
 import React from "react";
 const PostDetailPage = (props:{post:any})=>{
-    console.log(props)
     return (
         <>
             <Head>
@@ -16,18 +15,27 @@ const PostDetailPage = (props:{post:any})=>{
         </>
     )
 }
-export const getServerSideProps = (context: { params: any; }) => {
+export const getStaticProps = (context: { params: any; }) => {
     const {params} = context;
     const {slug} = params;
     console.log(slug)
-    // const postData = getPostDetail(slug[1],slug[2])
-    console.log(params)
+    const postData = getPostDetail(slug[1],slug[2])
+    // console.log(postData)
 
     return{
         props:{
-            post:[]
+            post:postData
         },
+        revalidate:600
     }
 }
 
+export function getStaticPaths(context:{params:any}){
+    return{
+        paths:[
+            { params: { slug: ["2022-8-15","blog","博客项目创建指南"]} },
+        ],
+        fallback:'blocking'
+    }
+}
 export default PostDetailPage;
