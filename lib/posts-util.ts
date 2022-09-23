@@ -13,13 +13,8 @@ export function getPostsCatalogue(){
 }
 
 export const getPostDetail = (catalogueName:string,postName:string) =>{
-    console.log(catalogueName,postName)
-
     const filePath = path.join(getDirectory("posts/"+catalogueName), `${postName}.md`)
-
     const fileContent = fs.readFileSync(filePath, 'utf-8')
-    console.log(filePath,fileContent)
-    return {}
     // matter 这个模块 可以分开 哪些是md文件的变量 哪些是内容
     const {data, content} = matter(fileContent)
     return {

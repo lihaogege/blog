@@ -4,6 +4,7 @@ import { getPostDetail} from "../../lib/posts-util";
 import Head from "next/head";
 import React from "react";
 const PostDetailPage = (props:{post:any})=>{
+    console.log(props)
     return (
         <>
             <Head>
@@ -15,7 +16,7 @@ const PostDetailPage = (props:{post:any})=>{
         </>
     )
 }
-export const getStaticProps = (context: { params: any; }) => {
+export const getServerSideProps = (context: { params: any; }) => {
     const {params} = context;
     const {slug} = params;
     console.log(slug)
@@ -24,9 +25,9 @@ export const getStaticProps = (context: { params: any; }) => {
 
     return{
         props:{
-            post:[]
+            post:postData
         },
-        revalidate:600
     }
 }
+
 export default PostDetailPage;
