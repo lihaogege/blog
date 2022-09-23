@@ -20,12 +20,12 @@ export const getServerSideProps = (context: { params: any; }) => {
     const {params} = context;
     const {slug} = params;
     console.log(slug)
-    const postData = getPostDetail(slug[1],slug[2])
-    console.log(postData)
+    // const postData = getPostDetail(slug[1],slug[2])
+    console.log(params)
 
     return{
         props:{
-            post:postData
+            post:[]
         },
     }
 }
