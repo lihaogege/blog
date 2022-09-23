@@ -9,14 +9,24 @@
   align-items: center;
   gap: 1rem;
 }
-
-.header h1 {
-  font-size: var(--size-8);
-  color: var(--color-primary-500);
-  margin: 0;
-  line-height: initial;
-  text-align: center;
+.headerTitle{
+  .postDetails{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  span{
+    color: var(--color-primary-500);
+  }
+  h1 {
+    font-size: var(--size-8);
+    color: var(--color-primary-500);
+    margin: 0;
+    line-height: initial;
+    text-align: center;
+  }
 }
+
 
 .header img {
   border-radius: 8px;
@@ -29,7 +39,6 @@
   .header {
     argin: 0  0 var(--size-8);
     flex-direction: row;
-    align-items: flex-end;
   }
 
   .header h1 {

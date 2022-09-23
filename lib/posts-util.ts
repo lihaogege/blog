@@ -37,7 +37,8 @@ export const getPostData = (CatalogueName: string) => {
         const {data, content} = matter(fileContent)
         postDataArray.push({
             ...data,
-            content
+            content,
+            projectName:CatalogueName
         })
 
     }) : null

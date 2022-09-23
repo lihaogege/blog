@@ -9,7 +9,6 @@ interface PropsType{
 }
 const ProjectItem = (props:PropsType) => {
     const {href,projectName,img} = props
-    console.log(img)
     return (
         <li>
             <Card>

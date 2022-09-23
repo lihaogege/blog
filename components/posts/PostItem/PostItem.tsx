@@ -9,23 +9,17 @@ type PropsType = {
         title:'',
         image:'',
         excerpt:'',
-        date:'',
+        date:any,
         slug:'',
-        classify:''
+        projectName:''
     },
 }
 const PostItem:NextPage<PropsType> = (props) => {
-    const { title, image, excerpt , date ,classify } = props.post;
+    const { title, image, excerpt , date ,projectName } = props.post;
 
-    var tradeDate = (new Date()).toLocaleDateString().split('/');
-    console.log(tradeDate)
-    var year = tradeDate[0];
-    var month = tradeDate[1];
-    var day = tradeDate[2];
-    const formattedDate = year + '-' + month  + '-' + day;;
-
-    const imagePath =image ?  `/images/posts/${classify}/${date}/${image}` : null
-    const linkPath = `/posts/${formattedDate}/${classify}/${title}`
+    var tradeDate = date.split(' ')[0];
+    const imagePath =image ?  `/images/posts/${projectName}/${tradeDate}/${image}` : null
+    const linkPath = `/posts/${tradeDate}/${projectName}/${title}`
     return (
         <li className={classes.post}>
             <Link href={linkPath}>
@@ -40,7 +34,7 @@ const PostItem:NextPage<PropsType> = (props) => {
                     </div>
                     <div className={classes.content}>
                         <h3>{title}</h3>
-                        <time>{formattedDate}</time>
+                        <time>{tradeDate}</time>
                     </div>
                 </a>
             </Link>

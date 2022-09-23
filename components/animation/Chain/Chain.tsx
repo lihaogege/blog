@@ -118,7 +118,6 @@ export default function App() {
         enter: { opacity: 1, scale: 1 },
         leave: { opacity: 0, scale: 0 },
     })
-    console.log(size.goal)
     // This will orchestrate the two animations above, comment the last arg and it creates a sequence
     useChain(open ? [springApi, transApi] : [transApi, springApi], [
         0,

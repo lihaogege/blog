@@ -1,0 +1,23 @@
+{
+  "id": "3667982",
+  "name": "blog",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6447187",
+      "name": "浏览",
+      "font_class": "liulan",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "8145819",
+      "name": "浏览",
+      "font_class": "liulan1",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    }
+  ]
+}

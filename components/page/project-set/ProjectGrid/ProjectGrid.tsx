@@ -7,7 +7,7 @@ import CardsStack from "../../../animation/CardsStack/CardsStack";
 const ProjectGrid = () => {
     const {projectDataSet} = usePeojectListDataset()
     React.useEffect(()=>{
-        console.log(projectDataSet)
+
     },[projectDataSet])
     return (
         <ul className={classes["project-grid"]}>

@@ -14,7 +14,7 @@ const Index = () => {
     const [data,setData] = useState('')
     useEffect(()=>{
         return ()=>{
-            console.log("清理函数")
+
         }
     },[])
     return (

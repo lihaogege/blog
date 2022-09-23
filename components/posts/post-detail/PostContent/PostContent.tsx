@@ -27,7 +27,6 @@ const PostContent = (props: PropsType) => {
 
     React.useEffect(()=>{
         const h1:any = document.querySelectorAll("h1")
-        console.log(h1)
         const h2 = document.querySelectorAll("h2")
         const h3 = document.querySelectorAll("h3")
         let array = []
@@ -35,11 +34,10 @@ const PostContent = (props: PropsType) => {
             array.push(h1[i].innerText)
 
         }
-        console.log(catalogue)
     },[])
-    let {title,date,excerpt,isFeatured,image,classify,content,codeDemo}:any = props.post;
-    const imagePath =image ?  `/images/posts/${classify}/${date}/${image}` : null
-    const codeDemoUrl = codeDemo ?  `/posts/code-demo/${classify}/${codeDemo}` : ""
+    let {title,date,excerpt,isFeatured,image,projectName,content,codeDemo}:any = props.post;
+    const imagePath =image ?  `/images/posts/${projectName}/${date}/${image}` : null
+    const codeDemoUrl = codeDemo ?  `/posts/code-demo/${projectName}/${codeDemo}` : ""
     type ParagraphType = {
         node: any,
         children: any
@@ -54,7 +52,7 @@ const PostContent = (props: PropsType) => {
                 return (
                     <div className={classes.image}>
                         <Image
-                            src={`/images/posts/${classify}${date}/${image}`}
+                            src={`/images/posts/${projectName}${date}/${image}`}
                             alt={image.alt}
                             width={600}
                             height={300}
