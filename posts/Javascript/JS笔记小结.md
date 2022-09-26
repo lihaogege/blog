@@ -1,5 +1,5 @@
 ---
-title: 'js笔记小结'
+title: 'JS笔记小结'
 date: '2022-10-16'
 excerpt: javaScript是世界上最流行的脚本语言,无论我们是在手机,平板,电脑还是在其他设备上,我们在访问浏览器时就会使用javascript.
 isFeatured: false
