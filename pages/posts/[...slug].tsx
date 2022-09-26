@@ -1,6 +1,6 @@
 import {NextPage} from "next";
 import PostContent from "../../components/posts/post-detail/PostContent/PostContent";
-import { getPostDetail} from "../../lib/posts-util";
+import {getAllPosts, getPostDetail} from "../../lib/posts-util";
 import Head from "next/head";
 import React from "react";
 const PostDetailPage = (props:{post:any})=>{
@@ -31,10 +31,18 @@ export const getStaticProps = (context: { params: any; }) => {
 }
 
 export function getStaticPaths(context:{params:any}){
+    const AllPosts = getAllPosts()
+    let AllPostsListSet:any = []
+    AllPosts.map((item:any)=>{
+       item.posts.map((itemPostsItem:any)=>{
+           var tradeDate = itemPostsItem.date.split(' ')[0];
+           AllPostsListSet.push(
+               { params: { slug: [tradeDate,itemPostsItem.classify,itemPostsItem.title]} }
+           )
+        })
+    })
     return{
-        paths:[
-            { params: { slug: ["2022-8-15","blog","博客项目创建指南"]} },
-        ],
+        paths:AllPostsListSet,
         fallback:'blocking'
     }
 }
