@@ -3,14 +3,14 @@ import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from 'react-use-gesture'
 
 import styles from './CardsStack.module.less'
+import {useRouter} from "next/router";
 
 const cards = [
-    'https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_06_Lovers.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    '/images/posts/default.png',
+    '/images/posts/default.png',
+    '/images/posts/default.png',
+    '/images/posts/default.png',
+    '/images/posts/default.png',
 ]
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
@@ -26,7 +26,8 @@ const from = (_i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 const trans = (r: number, s: number) =>
     `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
-function Deck() {
+function Deck({cards}:{cards:any}) {
+    const router = useRouter()
     const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
     const [props, api] = useSprings(cards.length, i => ({
         ...to(i),
@@ -65,9 +66,10 @@ function Deck() {
                     {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
                     <animated.div
                         {...bind(i)}
+                        onDoubleClick={()=> router.push({pathname:cards[i].href})}
                         style={{
                             transform: interpolate([rot, scale], trans),
-                            backgroundImage: `url(${cards[i]})`,
+                            backgroundImage: `url(${cards[i].img})`,
                         }}
                     />
                 </animated.div>
@@ -76,10 +78,18 @@ function Deck() {
     )
 }
 
-export default function App() {
+export default function App({classify,projectSet}:{classify:string,projectSet:any}) {
+    const cards = projectSet
+    console.log(projectSet)
     return (
-        <div className={styles.container}>
-            <Deck />
-        </div>
+        <>
+            <div className={styles.containerBox}>
+                <h1>{classify}</h1>
+                <div className={styles.container}>
+                    <Deck cards={cards}/>
+                </div>
+            </div>
+
+        </>
     )
 }

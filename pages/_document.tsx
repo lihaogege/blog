@@ -13,6 +13,7 @@ class MyDocument extends Document {
                     <Main/>
                     <NextScript/>
                     <div id="notifications"/>
+                    <div id="backDrop"/>
                 </body>
             </Html>
         );

@@ -8,10 +8,10 @@ const ProjectGrid = () => {
     const {projectDataSet} = usePeojectListDataset()
     React.useEffect(()=>{
 
-    },[projectDataSet])
+    },[])
     return (
         <ul className={classes["project-grid"]}>
-            {projectDataSet.map((item,index)=><CardsStack key={index}></CardsStack>)}
+            {Object.keys(projectDataSet).map((item:any,index:number)=><CardsStack key={index} classify={item} projectSet={projectDataSet[item]}/>)}
             {/*{projectDataSet.map((item:any,index)=><ProjectItem key={index} href={item.href} projectName={item.projectName} img={item.img} />)}*/}
         </ul>
     );

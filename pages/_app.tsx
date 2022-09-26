@@ -1,5 +1,6 @@
-import '../styles/reset.less'   // 清除默认样式
 import '../styles/globals.less' // 全局样式
+import "../styles/scrollbar.less"; // 滚动条样式
+import '../styles/reset.less'   // 清除默认样式
 import type {AppProps} from 'next/app'
 import Layout from "../components/layout/layout";
 import Head from "next/head";
@@ -12,6 +13,7 @@ import {IntlProvider} from 'react-intl'
 let persistor = persistStore(store);
 import {setLocale} from "../store/language/language";
 import en_US from "../locale/en-US";
+import Search from "../components/layout/Search/Search";
 
 function MyApp({Component, pageProps}: AppProps) {
     return (
@@ -26,6 +28,7 @@ function MyApp({Component, pageProps}: AppProps) {
                                 <meta name="keywords" content="前端博客,个人博客,博客,李昊翰的博客,前端技术文档"/>
                             </Head>
                             <Component {...pageProps} />
+                            <Search/>
                         </Layout>
                     </PersistGate>
                 </IntlProvider>

@@ -26,7 +26,7 @@ const AllPostsPage = (props: { posts: [],test:[] }) => {
                 <meta name="description" content="个人博客,李昊翰的博客,分享前端前沿技术,VUE,React,NodeJs,Typescript,框架全家桶,小程序等前端知识"/>
                 <meta name="keywords" content="前端博客,个人博客,博客,李昊翰的博客,前端技术文档"/>
             </Head>
-            <HeaderBg/>
+            <HeaderBg title={"Article"}/>
             <Allposts posts={props.posts}/>
         </>
     );

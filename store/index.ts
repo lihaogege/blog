@@ -4,9 +4,11 @@ import storage from 'redux-persist/lib/storage';     // 本地存储
 import storageSession from 'redux-persist/lib/storage/session'; // 会话存储
 import thunk from "redux-thunk";    //
 import languageReducer from './language/language'
+import searchReducer from "./search/index"
 // combineReducers 合并reducer
 const reducers = combineReducers({
-    language:languageReducer
+    language:languageReducer,
+    search:searchReducer
 })
 const persistConfig = {
     key: 'root',

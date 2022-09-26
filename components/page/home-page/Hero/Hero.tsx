@@ -10,7 +10,7 @@ const Hero:NextPage = () => {
           <Card>
               <div className={classes["hreo-container"]}>
                   <div className={classes.image}>
-                      <Image src="/images/site/max.png" alt="An image showing Max" width={300} height={300}/>
+                      <Image src="/images/author/author.jpg" alt="An image showing Max" width={300} height={300}/>
                   </div>
                   <Trail>
                       <h1>Hi, Im Rick</h1>

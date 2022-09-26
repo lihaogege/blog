@@ -1,12 +1,8 @@
 /*定义滚动条样式（高宽及背景）*/
 ::-webkit-scrollbar {
-  width: 14px; /* 滚动条宽度， width：对应竖滚动条的宽度  height：对应横滚动条的高度*/
-  background: #f1f1f1;
-  height: 10px;
-  &:hover{
-    background: rgba(0,0,0,0.2);
-    cursor: pointer;
-  }
+  z-index: var(--index-3);
+  width: 12px;
+  height: 8px;
 }
 
 * {
@@ -15,18 +11,20 @@
 
 /*定义滚动条轨道（凹槽）样式*/
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px #f1f1f1; /* 较少使用 */
+  z-index: var(--index-2);
+  //-webkit-box-shadow: inset 0 0 6px #f1f1f1; /* 较少使用 */
   border-radius: 6px;
 }
 
 /*定义滑块 样式*/
 ::-webkit-scrollbar-thumb {
-  border-radius: 30px;
-  height: 15px; /* 滚动条滑块长度 */
-  background-color: #ccc;
-  transition: all .3s;
+  position: relative;
+  min-height: 25px;
+  border-radius: 9999px;
+  background: linear-gradient(to top right, #FF5E3A 0%, #FF2A68 100%) !important;
+  background-clip: padding-box;
+  transition: all .8s;
   &:hover{
-    background: rgba(0,0,0,0.5);
-    cursor: pointer;
+    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
   }
 }

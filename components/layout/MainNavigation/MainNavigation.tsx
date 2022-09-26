@@ -2,14 +2,20 @@ import React, {useEffect} from 'react';
 import Link from "next/link"
 import Logo from "../Logo/Logo"
 import classes from './MainNavigation.module.less'
+import {setSearchFlag} from "../../../store/search";
+import {useDispatch, useSelector} from "react-redux";
 
 const NavList = [
     {navName: "帖子", href: "/posts"},
     {navName: "项目集", href: "/project-set"},
     {navName: "联系我", href: "/contact"},
-    {navName: "搜索", href: "/contact"},
 ]
 const MainNavigation = () => {
+    const {searchFlag} = useSelector((state:any)=>state.search)
+    const dispatch  = useDispatch()
+    const toggleSearchHandler = () =>{
+        dispatch(setSearchFlag(!searchFlag))
+    }
     let scrollTopValue = 0
     const [headerStyles, setheaderStyles] = React.useState({})
 
@@ -62,6 +68,12 @@ const MainNavigation = () => {
                             </Link>
                         </li>
                     ))}
+                    <li onClick={toggleSearchHandler}>
+                        搜索
+                    </li>
+                    <li>
+                        切换中英文
+                    </li>
                 </ul>
             </nav>
         </header>

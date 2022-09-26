@@ -8,14 +8,10 @@
   padding: 0 10%;
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 3000;
+  z-index: var(--index-1);
   transition: all .6s;
   transform: none;
-  background-image: radial-gradient(transparent 1px,#000000 1px);
-  background-size: 4px 4px;
-  backdrop-filter: saturate(50%) blur(4px);
-  border-bottom: 2px solid black;
+  backdrop-filter: saturate(50%) blur(12px);
 }
 
 .header ul {
@@ -27,6 +23,9 @@
 }
 
 .header li {
+  cursor: pointer;
+  color: var(--color-grey-100);
+  font-size: var(--size-5);
   margin: 0 var(--size-4);
 }
 
