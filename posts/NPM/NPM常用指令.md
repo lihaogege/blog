@@ -3,7 +3,7 @@ title: 'NPM常用指令'
 date: '2022-8-15 17:56'
 excerpt: npm使用最多的常用指令集合
 isFeatured: false
-classify: 'ElementaryArticle'
+classify: 'NPM'
 image:
 codeDemo:
 ---

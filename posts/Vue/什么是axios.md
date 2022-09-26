@@ -3,7 +3,7 @@ title: '什么是axios'
 date: '2022-8-15 17:56'
 excerpt: 什么是axios?怎么导入 ? 
 isFeatured: true
-classify: 'ElementaryArticle'
+classify: 'Vue'
 image:
 codeDemo:
 ---

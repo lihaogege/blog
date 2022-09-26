@@ -3,7 +3,7 @@ title: 'JS小技巧'
 date: '2022-9-22'
 excerpt: 怎么给scrrollTo 加一个过渡的效果
 isFeatured: false
-classify: 'ElementaryArticle'
+classify: 'Javascript'
 image: 
 codeDemo: 
 ---

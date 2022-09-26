@@ -3,7 +3,7 @@ title: 'CSS3新增选择器'
 date: '2022-8-16 10:56'
 excerpt: 新增的选择器,属性选择器,相邻选择器...
 isFeatured: false
-classify: 'FeaturedArticles'
+classify: 'CSS'
 ---
 
 

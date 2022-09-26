@@ -3,7 +3,7 @@ title: 'Nodejs指南'
 date: '2022-8-15 17:56'
 excerpt: Nodejs是一个javascript的运行平台 , 可以让jacascript 运行在浏览器之外
 isFeatured: false
-classify: 'ElementaryArticle'
+classify: 'NodeJs'
 image:
 codeDemo:
 ---
