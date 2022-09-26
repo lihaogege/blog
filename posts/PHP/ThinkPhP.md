@@ -1,6 +1,6 @@
 ---
 title: 'ThinkPhP'
-date: '2022-8/15 17:56'
+date: '2022-8-15 17:56'
 excerpt: 网络应用程序架构,MVC
 isFeatured: false
 classify: 'PHP'

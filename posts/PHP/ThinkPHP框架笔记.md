@@ -1,6 +1,6 @@
 ---
 title: 'ThinkPHP框架笔记'
-date: '2022-8/15 17:56'
+date: '2022-8-15 17:56'
 excerpt: ThinkPHP框架可以用于什么类型得项目开发?
 isFeatured: false
 classify: 'PHP'

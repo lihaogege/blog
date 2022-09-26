@@ -1,6 +1,6 @@
 ---
 title: 'PHP之MVC设计模式'
-date: '2022-8/15'
+date: '2022-8-15'
 excerpt: MVC核心思想是将软件用户界面和业务逻辑分离以使代码可扩展性、可复用性、可维护性、灵活性加强。
 isFeatured: false
 classify: 'PHP'

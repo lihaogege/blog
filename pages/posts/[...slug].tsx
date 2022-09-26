@@ -39,6 +39,7 @@ export function getStaticPaths(context:{params:any}){
            AllPostsListSet.push(
                { params: { slug: [tradeDate,itemPostsItem.classify,itemPostsItem.title]} }
            )
+            // console.log(itemPostsItem)
         })
     })
     return{
