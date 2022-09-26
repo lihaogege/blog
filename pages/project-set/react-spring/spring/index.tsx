@@ -18,7 +18,7 @@ const Index = () => {
             </section>
             <section className={styles["animation-item"]}>
                 <h2>卡片堆栈</h2>
-                <CardsStack></CardsStack>
+                {/*<CardsStack></CardsStack>*/}
             </section>
             <section className={styles["animation-item"]}>
                 <h2>卡片</h2>
