@@ -8,11 +8,15 @@
   transition: all .6s;
   backdrop-filter: saturate(50%) blur(12px);
   .footer-content{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 60% 30%;
+    justify-content: center;
+    padding: 1.5rem 0;
     a{
       color: white;
     }
     .footer-content-for-us{
-      padding: 1.5rem 0;
       display: grid;
       grid-gap: 15px 0;
       .footer-content-webInfo{
@@ -28,15 +32,25 @@
       }
       .footer-content-list{
         display: grid;
+        grid-auto-flow: column;
+        grid-gap: 0 20px;
         justify-content: center;
         justify-items: center;
-        grid-template-columns: auto auto auto auto auto;
-        grid-gap: 0 20px;
         li{
           font-weight: bold;
           color: white;
           font-size: var(--size-6);
         }
+      }
+    }
+    .phoneContainer{
+      display: grid;
+      align-items: center;
+      grid-auto-flow: column;
+      grid-template-columns: 5rem 5rem 5rem 5rem;
+      .svg-phone{
+        color: white;
+        font-size: 2rem;
       }
     }
   }

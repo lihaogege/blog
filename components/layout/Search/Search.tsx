@@ -29,7 +29,7 @@ const Search = () => {
 
     if(!searchFlag){
         return (
-            <div>ZC</div>
+            <div/>
         );
     }
 

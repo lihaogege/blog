@@ -1,22 +1,13 @@
 @import "~antd/dist/antd.less";
-@import "../pages/project-set/function/styles.less";
-
-html,
-body,
-main,#__next {
-  height: 100%;
-  width: 100%;
-}
-
-
+@import "./mixin.less";
 // 覆盖antd主题
-@primary-color: #ffffff; // 全局主色
-@link-color: #1890ff; // 链接色
+@primary-color: #253237; // 全局主色
+@link-color: #ffffff; // 链接色
 @success-color: #52c41a; // 成功色
 @warning-color: #faad14; // 警告色
 @error-color: #f5222d; // 错误色
 @font-size-base: 14px; // 主字号
-@heading-color: rgba(0, 0, 0, 0.85); // 标题色
+@heading-color: rgba(255, 255, 255, 0.85); // 标题色
 @text-color: rgba(0, 0, 0, 0.65); // 主文本色
 @text-color-secondary: rgba(0, 0, 0, 0.45); // 次文本色
 @disabled-color: rgba(0, 0, 0, 0.25); // 失效色
@@ -30,9 +21,30 @@ main,#__next {
 b{
   color: #333333;
 }
+.mixin_mobile(@content) {
+  /*超小屏幕开始 移动端*/
+  @media screen and (max-width: 768px) {
+    @content();
+  }
+}
+
+.mixin_desktop-md(@content) {
+  /*小屏时开始 pad端*/
+  @media screen and (max-width: 992px) {
+    @content();
+  }
+}
+
+.mixin_desktop(@content) {
+  /*中屏时开始 分辨率较小的pc端*/
+  @media screen and (max-width: 1200px) {
+    @content();
+  }
+}
 
 
 body{
+
   --theme-bg-color:#253237;
   --color-grey-50: hsl(265, 55%, 96%);
   --color-grey-100: hsl(265, 19%, 88%);

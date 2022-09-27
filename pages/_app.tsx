@@ -1,5 +1,6 @@
 import '../styles/globals.less' // 全局样式
 import "../styles/scrollbar.less"; // 滚动条样式
+import '../styles/responsive-layout.less' // 响应式布局包装器
 import '../styles/reset.less'   // 清除默认样式
 import type {AppProps} from 'next/app'
 import Layout from "../components/layout/layout";

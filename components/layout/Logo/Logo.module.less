@@ -1,13 +1,11 @@
+@import "/styles/mixin";
 .logo {
   text-transform: uppercase;
-  font-size: var(--size-5);
+  font-size: var(--size-6);
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
   color: var(--color-grey-50);
-}
-
-@media (min-width: 768px) {
-  .logo {
-    font-size: var(--size-8);
-  }
+  .mixin_mobile({
+    font-size: var(--size-6);
+  });
 }

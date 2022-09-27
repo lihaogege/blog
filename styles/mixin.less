@@ -1,0 +1,21 @@
+.mixin_mobile(@content) {
+  /*超小屏幕开始 移动端*/
+  @media screen and (max-width: 768px) {
+    @content();
+  }
+}
+
+.mixin_desktop-md(@content) {
+  /*小屏时开始 pad端*/
+  @media screen and (max-width: 992px) {
+    @content();
+  }
+}
+
+.mixin_desktop(@content) {
+  /*中屏时开始 分辨率较小的pc端*/
+  @media screen and (max-width: 1200px) {
+    @content();
+  }
+}
+

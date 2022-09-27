@@ -3,7 +3,7 @@ import classes from "./Logo.module.less"
 const Logo = () => {
     return (
         <div className={classes.logo}>
-            主页
+            首页
         </div>
     );
 };

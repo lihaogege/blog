@@ -13,12 +13,6 @@ interface PostsType {
     date: string
 }
 const AllPostsPage = (props: { posts: [],test:[] }) => {
-    React.useEffect(()=>{
-        const header:any = document.querySelector("header")
-        header.style.background = "rgba(0,0,0,0)"
-        header.style.backdropFilter = "none"
-        header.style.borderBottom = "none"
-    },[])
     return (
         <>
             <Head>

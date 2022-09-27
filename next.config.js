@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const withLess = require("next-with-less");
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
+const path = require('path')
 module.exports = (phase) => {
   // if(phase === PHASE_DEVELOPMENT_SERVER){
   //   return  withLess({
