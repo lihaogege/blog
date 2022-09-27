@@ -10,18 +10,16 @@ const FooterDataListSet = [
     {name: "友情链接",href:"/author"},
     {name: "打赏",href:"/author"},
     {name: "达瓦",href:"/author"},
-    {name: "挖坟",href:"/author"},
-    {name: "格式",href:"/author"},
+    {name: "Copyright © 2022 李昊翰个人博客",href:"/author"},
 ]
 const Links = [
     {linksName:''}
 ]
 const MainFooter = () => {
-    const router = useRouter()
     const openSourcePageHandler = () =>{
         const url = location.href
         console.log(`view-source:${url.split("//")[1]}`)
-        window.open(`view-source:${url.split("//")[1]}`)
+        window.open(`view-source:${url}`)
     }
     useEffect(()=>{
     },[])
