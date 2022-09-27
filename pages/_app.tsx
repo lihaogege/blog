@@ -15,12 +15,13 @@ let persistor = persistStore(store);
 import {setLocale} from "../store/language/language";
 import en_US from "../locale/en-US";
 import Search from "../components/layout/Search/Search";
+import {useEffect} from "react";
 
 function MyApp({Component, pageProps}: AppProps) {
+
     return (
         <>
             <Provider store={store}>
-                <IntlProvider locale={"en"} messages={en_US}>
                     <PersistGate loading={null} persistor={persistor}>
                         <Layout>
                             <Head>
@@ -32,7 +33,6 @@ function MyApp({Component, pageProps}: AppProps) {
                             <Search/>
                         </Layout>
                     </PersistGate>
-                </IntlProvider>
             </Provider>
         </>
     )

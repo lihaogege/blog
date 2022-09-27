@@ -6,14 +6,18 @@ import {setSearchFlag} from "../../../store/search";
 import {useDispatch, useSelector} from "react-redux";
 import {SearchOutlined} from "@ant-design/icons";
 import { Select } from 'antd';
+import {useRouter} from "next/router";
 const { Option } = Select;
+import {setLocale} from "../../../store/language/language";
+import { FormattedMessage } from 'react-intl';
 const NavList = [
-    {navName: "帖子", href: "/posts"},
-    {navName: "实例", href: "/project-set"},
-    {navName: "联系我", href: "/contact"},
+    {navName: "global.posts", href: "/posts"},
+    {navName: "global.demo", href: "/project-set"},
+    {navName: "global.contact", href: "/contact"},
 ]
 const MainNavigation = () => {
-
+    const router = useRouter()
+    const {locale}  = useSelector((state:any)=>state.language)
     const {searchFlag} = useSelector((state:any)=>state.search)
     const dispatch  = useDispatch()
     const toggleSearchHandler = () =>{
@@ -44,12 +48,41 @@ const MainNavigation = () => {
         return scrollTop;
     }
     const handleChange = (value: string) => {
+        dispatch(setLocale(value))
         console.log(`selected ${value}`);
     };
 
     useEffect(() => {
+        const header:any = document.querySelector("header")
+        const TOP:any = document.getElementById("TOP")
+        const BOTTOM:any = document.getElementById("BOTTOM")
+        TOP.style.display = "none"
+        BOTTOM.style.display = "none"
+        const handleRouteChange = (url:string) => {
+
+            if(url.indexOf("/posts") !== -1){
+                header.style.background = "none"
+                header.style.backdropFilter = "none"
+
+            }else{
+                header.style.background = "rgba(0,0,0,0.8)"
+                header.style.backdropFilter = "saturate(50%) blur(4px)"
+
+            }
+            if(url === "/"){
+                TOP.style.display = "none"
+                BOTTOM.style.display = "none"
+            }else{
+                TOP.style.display = "block"
+                BOTTOM.style.display = "block"
+            }
+
+            console.log('App is changing to: ', url)
+        }
+        router.events.on('routeChangeStart', handleRouteChange)
         window.addEventListener("scroll", handleScroll, true)
         return () => {
+            router.events.off('routeChangeStart', handleRouteChange)
             window.removeEventListener("scroll", handleScroll, true)
         }
     }, [])
@@ -70,7 +103,9 @@ const MainNavigation = () => {
                         {NavList.map((item: any, index) => (
                             <li key={index}>
                                 <Link href={item.href}>
-                                    {item.navName}
+                                    <a>
+                                        <FormattedMessage id={item.navName}　defaultMessage={'hello'} />
+                                    </a>
                                 </Link>
                             </li>
                         ))}
@@ -78,9 +113,9 @@ const MainNavigation = () => {
                             <SearchOutlined/>
                         </li>
                         <li>
-                            <Select dropdownStyle={{zIndex:"var(--index-1)"}} defaultValue="中文" style={{ width: "5rem" }} onChange={handleChange}>
-                                <Option value="中文">中文</Option>
-                                <Option value="English">English</Option>
+                            <Select dropdownStyle={{zIndex:"var(--index-1)"}} defaultValue={locale} style={{ width: "5rem" }} onChange={handleChange}>
+                                <Option value="zh">中文</Option>
+                                <Option value="en">English</Option>
                             </Select>
                         </li>
                     </ul>

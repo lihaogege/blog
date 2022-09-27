@@ -1,9 +1,10 @@
 import React from 'react';
 import classes from "./Logo.module.less"
+import { FormattedMessage } from 'react-intl';
 const Logo = () => {
     return (
         <div className={classes.logo}>
-            首页
+            <FormattedMessage id={"global.home"} defaultMessage={"Home"}/>
         </div>
     );
 };

@@ -1,5 +1,4 @@
-const en_US = {
-    'intl.hello': "hello",
-    'intl.name': 'How can I help you?'
-}
+import posts from "./global/en.json"
+import ui from "./ui/en.json"
+const en_US = Object.assign(posts, ui);
 export default en_US;

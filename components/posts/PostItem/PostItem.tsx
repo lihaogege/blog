@@ -29,8 +29,8 @@ const PostItem:NextPage<PropsType> = (props) => {
                         layout="responsive" Image组件中设置这个属性 ,它将会填充它的外部去元素
                         优先根据外部宽度高度而定
                         */}
-                        {imagePath && <Image src={imagePath} alt={title} width={300} height={200} layout="responsive"/>}
-                        {!imagePath && <Image src={"/images/posts/default.png"} alt={title} width={300} height={200} layout="responsive"/>}
+                        {imagePath && <Image src={imagePath} alt={title} width={224} height={144} layout="responsive"/>}
+                        {!imagePath && <Image src={"/images/posts/default.png"} alt={title} width={224} height={144} layout="responsive"/>}
                     </div>
                     <div className={classes.content}>
                         <h3>{title}</h3>

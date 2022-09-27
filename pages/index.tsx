@@ -13,7 +13,6 @@ import Subject from "../components/page/home-page/Subject/Subject"
  * 页面组件的焦点相对较小, 不要在页面组件中放太多的内容
  */
 
-
 // 声明对象数组
 interface PostsType {
     slug:string,

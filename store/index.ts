@@ -14,7 +14,7 @@ const persistConfig = {
     key: 'root',
     version: 1,
     storage: storageSession,
-    whitelist: [],      //需要缓存的reducer
+    whitelist: ['language','messages'],      //需要缓存的reducer
     blacklist: ['test']  //不缓存的reducer
 };
 const persistedReducer = persistReducer(persistConfig, reducers);
