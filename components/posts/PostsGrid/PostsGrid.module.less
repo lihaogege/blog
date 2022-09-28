@@ -1,10 +1,14 @@
+@import "/styles/mixin";
 .grid {
-  width: 90%;
-  margin: 30px auto 0;
+  width: 80%;
+  margin: 1.5rem auto 0;
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.2rem;
   align-content: center;
+  .mixin_mobile({
+    width: 100%;
+  });
 }

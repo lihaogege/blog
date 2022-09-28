@@ -7,5 +7,10 @@
   "global.links" : "友情链接",
   "global.Reward" : "打赏",
   "global.Visits" : "访问量:",
-  "global.visitors" : "访客数:"
+  "global.visitors" : "访客数:",
+
+  "global.yourEmail": "邮箱",
+  "global.yourName": "名字",
+  "global.yourMessage": "内容",
+  "global.sendMessage": "发送"
 }

@@ -19,7 +19,6 @@ const Links = [
 const MainFooter = () => {
     const openSourcePageHandler = () =>{
         const url = location.href
-        console.log(`view-source:${url.split("//")[1]}`)
         window.open(`view-source:${url}`)
     }
     useEffect(()=>{

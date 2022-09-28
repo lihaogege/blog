@@ -4,7 +4,7 @@ import Image from 'next/image'
 import classes from '../styles/Home.module.less'
 import Hero from "../components/page/home-page/Hero/Hero";
 import FeaturedPosts from "../components/page/home-page/FeaturedPosts/FeaturedPosts";
-import {getFeaturePosts} from "../lib/posts-util";
+import {getAllPosts, getFeaturePosts} from "../lib/posts-util";
 import {userInfo} from "../api/api";
 import {useEffect} from "react";
 import {useCookie} from "next-cookie";
@@ -27,7 +27,6 @@ const DUMMY_POSTS:PostsType[] = [
 ]
 
 const Home: NextPage = (props:any) => {
-
    useEffect(()=>{
        // useCookie().set("LOGIN_UNIQUE_TOKEN","eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NDQ1MyIsImlhdCI6MTY0NjcyMDk0M30._tIpCArxOJ8YqiAryzYpx9T5NYDUkd3DwctyISf1_ec")
        // userInfo().then(res=>{
@@ -40,16 +39,6 @@ const Home: NextPage = (props:any) => {
        <Subject/>
    </>
   )
-}
-
-export const getStaticProps  = () =>{
-    const featuredPosts = DUMMY_POSTS
-    return{
-        props:{
-            posts:featuredPosts
-        },
-
-    }
 }
 
 export default Home

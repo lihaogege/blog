@@ -11,7 +11,6 @@ const PostDetailPage = (props:{post:any})=>{
                 <meta name="description" content={props.post.excerpt}/>
             </Head>
             <PostContent post={props.post}/>
-
         </>
     )
 }

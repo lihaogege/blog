@@ -11,9 +11,9 @@ const { Option } = Select;
 import {setLocale} from "../../../store/language/language";
 import { FormattedMessage } from 'react-intl';
 const NavList = [
-    {navName: "global.posts", href: "/posts"},
-    {navName: "global.demo", href: "/project-set"},
-    {navName: "global.contact", href: "/contact"},
+    {navName: "global.posts", href: "/posts",isEnable:true},
+    {navName: "global.demo", href: "/project-set",isEnable:true},
+    {navName: "global.contact", href: "/contact",isEnable:false},
 ]
 const MainNavigation = () => {
     const router = useRouter()
@@ -49,7 +49,6 @@ const MainNavigation = () => {
     }
     const handleChange = (value: string) => {
         dispatch(setLocale(value))
-        console.log(`selected ${value}`);
     };
 
     useEffect(() => {
@@ -76,8 +75,6 @@ const MainNavigation = () => {
                 TOP.style.display = "block"
                 BOTTOM.style.display = "block"
             }
-
-            console.log('App is changing to: ', url)
         }
         router.events.on('routeChangeStart', handleRouteChange)
         window.addEventListener("scroll", handleScroll, true)
@@ -101,13 +98,19 @@ const MainNavigation = () => {
                 <nav>
                     <ul>
                         {NavList.map((item: any, index) => (
-                            <li key={index}>
-                                <Link href={item.href}>
-                                    <a>
-                                        <FormattedMessage id={item.navName}　defaultMessage={'hello'} />
-                                    </a>
-                                </Link>
-                            </li>
+                            item.isEnable
+                                ?
+                                (
+                                    <li key={index}>
+                                        <Link href={item.href}>
+                                            <a>
+                                                <FormattedMessage id={item.navName}　defaultMessage={'hello'} />
+                                            </a>
+                                        </Link>
+                                    </li>
+                                )
+                                :
+                                null
                         ))}
                         <li onClick={toggleSearchHandler}>
                             <SearchOutlined/>

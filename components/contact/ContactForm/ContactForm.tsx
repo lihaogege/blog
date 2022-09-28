@@ -83,11 +83,13 @@ const ContactForm = () => {
 
     return (
        <section className={classes.contact}>
-           <h1><FormattedMessage id="intl.name"　defaultMessage={'hello'} /></h1>
+           <h1><FormattedMessage id="global.contact"　defaultMessage={'hello'} /></h1>
            <form className={classes.form} onSubmit={sendMessageHandler}>
                <div className={classes.controls}>
                    <div className={classes.control}>
-                       <label htmlFor="email">Your Email</label>
+                       <label htmlFor="email">
+                           <FormattedMessage id="global.yourEmail"　defaultMessage={'你的邮箱'} />
+                       </label>
                        <input type="email"
                               id="email"
                               value={enterdEmail}
@@ -95,7 +97,9 @@ const ContactForm = () => {
                               required/>
                    </div>
                    <div className={classes.control}>
-                       <label htmlFor="name">Your Name</label>
+                       <label htmlFor="name">
+                           <FormattedMessage id="global.yourName"　defaultMessage={'你的名字'} />
+                       </label>
                        <input type="text" id="name"
                               value={enterdName}
                               onChange={(e) => setEnterdName(e.target.value)}
@@ -103,7 +107,9 @@ const ContactForm = () => {
                    </div>
                </div>
                <div className={classes.control}>
-                   <label htmlFor="message">Your Message</label>
+                   <label htmlFor="message">
+                       <FormattedMessage id="global.yourMessage"　defaultMessage={'内容'} />
+                   </label>
                    <textarea id={"message"} rows={5}
                              value={enterdMessage}
                              onChange={(e) => setEnterdMessage(e.target.value)}
@@ -112,7 +118,9 @@ const ContactForm = () => {
                </div>
 
                <div className={classes.actions}>
-                  <button>Send Message</button>
+                  <button>
+                      <FormattedMessage id="global.sendMessage"　defaultMessage={'发送'} />
+                  </button>
                </div>
            </form>
            {notification && <Notification title={notification.title} status={notification.status} message={notification.message}/>}

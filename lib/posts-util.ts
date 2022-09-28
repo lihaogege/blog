@@ -19,7 +19,8 @@ export const getPostDetail = (catalogueName:string,postName:string) =>{
     const {data, content} = matter(fileContent)
     return {
         ...data,
-        content
+        content,
+        projectName:catalogueName
     }
 }
 

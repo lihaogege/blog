@@ -17,7 +17,6 @@ type PropsType = {
 }
 const Layout:NextPage<PropsType> = (props) => {
     const {locale,messages} = useSelector((state:any) => state.language)
-    console.log(messages)
     return (
         <Fragment>
             <IntlProvider locale={locale} messages={messages}>

@@ -80,7 +80,6 @@ function Deck({cards}:{cards:any}) {
 
 export default function App({classify,projectSet}:{classify:string,projectSet:any}) {
     const cards = projectSet
-    console.log(projectSet)
     return (
         <>
             <div className={styles.containerBox}>

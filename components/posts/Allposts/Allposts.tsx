@@ -2,6 +2,8 @@ import React from 'react';
 import classes from "./Allposts.module.less"
 import PostsGrid from "../PostsGrid/PostsGrid";
 import {useRouter} from "next/router";
+import {BookOutlined,TagOutlined} from "@ant-design/icons";
+
 type PropsType = {
     posts : Array<object>
 }
@@ -26,6 +28,25 @@ const Allposts = (props:PropsType) => {
         getPostGridDataSet()
     }
 
+    const randomColorHandler = () =>{
+        const colorArr = [
+            "#F9EBEA",
+            "#F5EEF8",
+            "#D5F5E3",
+            "#E8F8F5",
+            "#82E0AA",
+            "#F8C471",
+            "#D7BDE2",
+            "#85C1E9",
+            "#F9E79F",
+            "#E8F8F5",
+        ]
+
+        const color = Math.floor(Math.random() * colorArr.length)
+
+        return colorArr[color]
+    }
+
     React.useEffect(()=>{
         // @ts-ignore
         const firstCatalogueName = props.posts[0].catalogueName
@@ -38,13 +59,25 @@ const Allposts = (props:PropsType) => {
     },[postCategoryName])
     return (
        <>
-           <div className={classes["article-classification"]}>
-               <h2>文章分类</h2>
-               <ul className={classes["classification-list"]}>
-                   {props.posts.map((item:any,index)=> <li key={index} onClick={()=>switchCategoryHandler(item.catalogueName)} className={postCategoryName === item.catalogueName ? classes["is-active"] : ""}>{item.catalogueName}</li>)}
-               </ul>
+           <div className={"main-wrapper "}>
+               <div className={`${classes["article-classification"]}`}>
+                   <h2>
+                       <BookOutlined style={{marginRight:"0.5rem"}}/>
+                       文章分类
+                   </h2>
+                   <ul className={classes["classification-list"]}>
+                       {props.posts.map((item:any,index)=>
+                           <li key={index}
+                               style={{background:randomColorHandler()}}
+                               onClick={()=>switchCategoryHandler(item.catalogueName)}
+                               className={postCategoryName === item.catalogueName ? classes["is-active"] : ""}>
+                               <span> {item.catalogueName}</span>
+                               <span style={{color: "#e91e63",marginLeft:"0.2rem"}}>{item.posts.length}</span>
+                           </li>)}
+                   </ul>
+               </div>
+               <PostsGrid posts={postsDataSet}/>
            </div>
-           <PostsGrid posts={postsDataSet}/>
        </>
     );
 };

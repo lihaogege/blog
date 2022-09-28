@@ -27,8 +27,10 @@ const Index = () => {
                 <meta name="description" content="个人博客,李昊翰的博客,分享前端前沿技术,VUE,React,NodeJs,Typescript,框架全家桶,小程序等前端知识"/>
                 <meta name="keywords" content="前端博客,个人博客,博客,李昊翰的博客,前端技术文档"/>
             </Head>
-            <div className={styles.projectContainer}>
-                <ProjectGrid/>
+            <div className={"main-wrapper"}>
+                <div className={styles.projectContainer}>
+                    <ProjectGrid/>
+                </div>
             </div>
         </div>
     );

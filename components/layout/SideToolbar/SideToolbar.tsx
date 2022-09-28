@@ -17,8 +17,9 @@ const SideToolbar = () => {
         })
     }
     const backBottomHandler = () =>{
+        const body = document.getElementById("__next")
         window.scrollTo({
-            top: document.body.offsetHeight,
+            top: body?.offsetHeight,
             behavior: "smooth"
         })
     }

@@ -1,6 +1,7 @@
 import '../styles/globals.less' // 全局样式
 import "../styles/scrollbar.less"; // 滚动条样式
 import '../styles/responsive-layout.less' // 响应式布局包装器
+import "../styles/line-clamp.less"  // 限制行数
 import '../styles/reset.less'   // 清除默认样式
 import type {AppProps} from 'next/app'
 import Layout from "../components/layout/layout";
@@ -16,9 +17,9 @@ import {setLocale} from "../store/language/language";
 import en_US from "../locale/en-US";
 import Search from "../components/layout/Search/Search";
 import {useEffect} from "react";
+import {getAllPosts} from "../lib/posts-util";
 
 function MyApp({Component, pageProps}: AppProps) {
-
     return (
         <>
             <Provider store={store}>
@@ -37,5 +38,6 @@ function MyApp({Component, pageProps}: AppProps) {
         </>
     )
 }
+
 
 export default MyApp

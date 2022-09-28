@@ -10,6 +10,7 @@ interface PropsType {
 const PostHeader = (props:PropsType) => {
     const router:any = useRouter()
     const {title,image} = props
+    console.log(image)
     return (
         <header className={classes.header}>
             <div className={classes.headerTitle}>

@@ -8,7 +8,9 @@ const ContactPage = () => {
             <Head>
                 <title>{"联系我"}</title>
             </Head>
-            <ContactForm/>
+            <div className="main-wrapper">
+                <ContactForm/>
+            </div>
         </>
     );
 };

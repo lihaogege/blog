@@ -7,5 +7,10 @@
   "global.links" : "Links",
   "global.Reward" : "Reward",
   "global.Visits" : "Visits:",
-  "global.visitors" : "visitors:"
+  "global.visitors" : "visitors:",
+
+  "global.yourEmail": "Your Email",
+  "global.yourName": "Your Name",
+  "global.yourMessage": "Your Message",
+  "global.sendMessage": "SendMessage"
 }

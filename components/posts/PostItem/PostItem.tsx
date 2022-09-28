@@ -33,8 +33,13 @@ const PostItem:NextPage<PropsType> = (props) => {
                         {!imagePath && <Image src={"/images/posts/default.png"} alt={title} width={224} height={144} layout="responsive"/>}
                     </div>
                     <div className={classes.content}>
-                        <h3>{title}</h3>
-                        <time>{tradeDate}</time>
+                        <div className={classes.contentTitle}>
+                            <h3>{title}</h3>
+                            <time>{tradeDate}</time>
+                        </div>
+                        <div className="text-limit-3">
+                            {excerpt}
+                        </div>
                     </div>
                 </a>
             </Link>

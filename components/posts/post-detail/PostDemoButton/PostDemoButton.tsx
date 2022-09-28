@@ -11,7 +11,7 @@ const PostDemoButton = ({codeDemoUrl}:PropsTypes) => {
                 <Link href={codeDemoUrl}>
                     <a>
                         <button>
-                            查看代码演示
+                            代码演示
                         </button>
                     </a>
                 </Link>
