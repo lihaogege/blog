@@ -4,6 +4,7 @@ class MyDocument extends Document {
         return (
             <Html lang='zh-cn'>
                 <Head>
+                    <meta name="baidu-site-verification" content="code-qOTgcQR0iO" />
                     <link rel="stylesheet" href="/iconfont/iconfont.css"/>
                     <title>{"李昊翰的博客-关注web前端技术-前端技术博客"}</title>
                     <meta name="Author" content="李昊翰"/>
