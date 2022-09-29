@@ -32,16 +32,24 @@ const   PostContent = (props: PropsType) => {
                    array.push({title:catalogue[i].innerText,type:"h1",id:catalogue[i].getAttribute("id"),children:[]})
                }
                if(catalogue[i].getAttribute("id").indexOf("h2") !== -1){
-                   array[array.length-1].children.push({title:catalogue[i].innerText,type:"h2",id:catalogue[i].getAttribute("id"),children:[]})
+                   if(array[array.length-1]){
+                       array[array.length-1].children.push({title:catalogue[i].innerText,type:"h2",id:catalogue[i].getAttribute("id"),children:[]})
+                   }else{
+                       array.push({title:catalogue[i].innerText,type:"h2",id:catalogue[i].getAttribute("id"),children:[]})
+                   }
                }
                if(catalogue[i].getAttribute("id").indexOf("h3") !== -1){
-                   array[array.length-1].children[array[array.length-1].children.length-1].children.push({title:catalogue[i].innerText,type:"h2",id:catalogue[i].getAttribute("id"),children:[]})
+                   if(array[array.length-1] && array[array.length-1].children[array[array.length-1].children.length-1]){
+                       array[array.length-1].children[array[array.length-1].children.length-1].children.push({title:catalogue[i].innerText,type:"h2",id:catalogue[i].getAttribute("id"),children:[]})
+                   }else{
+                       array.push({title:catalogue[i].innerText,type:"h3",id:catalogue[i].getAttribute("id"),children:[]})
+                   }
+
                    // array[array.length-1].children.children.push({title:catalogue[i].innerText,type:"h2",id:catalogue[i].getAttribute("id"),children:[]})
                }
 
 
            }
-           console.log(array)
            setCatalogue(array)
        },0)
 
@@ -135,8 +143,7 @@ const   PostContent = (props: PropsType) => {
                     </section>
                     <section className={classes["container-right"]}>
                         <section className={classes["container-right-bookmark"]}>
-                            <Affix offsetTop={88}>
-                                <Anchor showInkInFixed={true} className={classes.anchor}>
+                                <Anchor offsetTop={88} showInkInFixed={true} className={classes.anchor}>
                                     <h1>文章目录</h1>
                                     {catalogueData.map((item:any,index)=> <Link key={index} href={`#${item.id}`} title={item.title}>
                                         {item.children.map((itemChildren:any,indexx:number)=>
@@ -147,11 +154,8 @@ const   PostContent = (props: PropsType) => {
                                             </Link>
                                         )}
                                     </Link>)}
+                                    {codeDemoUrl && <PostDemoButton codeDemoUrl={codeDemoUrl}/>}
                                 </Anchor>
-                                <PostDemoButton codeDemoUrl={codeDemoUrl}/>
-                            </Affix>
-
-
                         </section>
                         <section>
                         </section>

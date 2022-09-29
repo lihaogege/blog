@@ -1,4 +1,4 @@
-import {NextPage} from "next";
+import {GetStaticProps, NextPage} from "next";
 import PostContent from "../../components/posts/post-detail/PostContent/PostContent";
 import {getAllPosts, getPostDetail} from "../../lib/posts-util";
 import Head from "next/head";
@@ -14,7 +14,7 @@ const PostDetailPage = (props:{post:any})=>{
         </>
     )
 }
-export const getStaticProps = (context: { params: any; }) => {
+export const getStaticProps = (context: { params: {slug:any}; }) => {
     const {params} = context;
     const {slug} = params;
     const postData = getPostDetail(slug[1],slug[2])
@@ -37,7 +37,6 @@ export function getStaticPaths(context:{params:any}){
            AllPostsListSet.push(
                { params: { slug: [tradeDate,itemPostsItem.classify,itemPostsItem.title]} }
            )
-            // console.log(itemPostsItem)
         })
     })
     return{

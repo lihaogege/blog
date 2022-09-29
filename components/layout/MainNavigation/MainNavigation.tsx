@@ -55,8 +55,6 @@ const MainNavigation = () => {
         const header:any = document.querySelector("header")
         const TOP:any = document.getElementById("TOP")
         const BOTTOM:any = document.getElementById("BOTTOM")
-        TOP.style.display = "none"
-        BOTTOM.style.display = "none"
         const handleRouteChange = (url:string) => {
 
             if(url.indexOf("/posts") !== -1){
