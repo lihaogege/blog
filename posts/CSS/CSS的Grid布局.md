@@ -25,7 +25,7 @@ codeDemo:
 
 > 采用网格布局的区域，称为"容器"（container）。容器内部采用网格定位的子元素，称为"项目"（item）。
 
-```
+```js
 <div class="container">
   <div class="item"><p>1</p></div>
   <div class="item"><p>2</p></div>

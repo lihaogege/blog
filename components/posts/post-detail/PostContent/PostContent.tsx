@@ -26,7 +26,7 @@ const   PostContent = (props: PropsType) => {
     React.useEffect(()=>{
        setTimeout(()=>{
            const catalogue:any = document.querySelectorAll(".catalogue")
-           let array = []
+           let array:any = []
            for(let i = 0 ; i < catalogue.length ; i++){
                if(catalogue[i].getAttribute("id").indexOf("h1") !== -1){
                    array.push({title:catalogue[i].innerText,type:"h1",id:catalogue[i].getAttribute("id"),children:[]})
