@@ -3,7 +3,7 @@ title: '初识canvas'
 date: '2022-10-17'
 excerpt: 
 isFeatured: true
-classify: ''
+classify: 'Canvas'
 image:
 codeDemo:
 ---
