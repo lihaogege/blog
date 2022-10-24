@@ -44,3 +44,23 @@ export function login ({body={},context={},swr=false,swrOptions={}}={}):Promise<
     // @ts-ignore
     return $fetch(parameter)
 }
+
+/**
+ * 登录接口
+ * @param body
+ * @param context
+ * @param swr
+ * @param swrOptions
+ */
+export function getInfoList ({body={},context={},swr=false,swrOptions={}}={}):Promise<any>{
+    const parameter = {
+        method:'get',
+        url:'/wapi/info/getInfoList.do',
+        body,
+        swr,
+        swrOptions,
+        context
+    }
+    // @ts-ignore
+    return $fetch(parameter)
+}

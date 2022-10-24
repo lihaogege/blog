@@ -1,0 +1,17 @@
+{
+  "sort.blog": "博客",
+  "sort.Canvas": "Canvas 画布",
+  "sort.CSS": "CSS",
+  "sort.diary": "日记",
+  "sort.InterviewQuestions": "面试问题",
+  "sort.Javascript": "JS指南",
+  "sort.MySql": "MySql数据库",
+  "sort.NextJs": "Next.Js框架",
+  "sort.NodeJs": "NodeJs",
+  "sort.NPM": "NPM包管理工具",
+  "sort.NuxtJs": "Nuxt.Js框架",
+  "sort.PHP": "PHP",
+  "sort.React": "React库",
+  "sort.Typescript": "Typescript",
+  "sort.Vue": "Vue指南"
+}

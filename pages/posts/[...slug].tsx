@@ -8,6 +8,7 @@ const PostDetailPage = (props:{post:any})=>{
         <>
             <Head>
                 <title>{props.post.title}</title>
+                <meta name="keywords" content={props.post.title}/>
                 <meta name="description" content={props.post.excerpt}/>
             </Head>
             <PostContent post={props.post}/>

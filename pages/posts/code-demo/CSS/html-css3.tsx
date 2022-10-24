@@ -3,7 +3,7 @@ import CodeDemoContent from "../../../../components/page/posts/CodeDemoContent/C
 const HtmlCss3 = () => {
     return (
         <div>
-            <CodeDemoContent/>
+            <CodeDemoContent code="" response=""/>
         </div>
     );
 };

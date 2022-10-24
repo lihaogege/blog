@@ -1,0 +1,17 @@
+{
+  "sort.blog": "blog",
+  "sort.Canvas": "canvas",
+  "sort.CSS": "CSS",
+  "sort.diary": "diary",
+  "sort.InterviewQuestions": "InterviewQuestions",
+  "sort.Javascript": "Javascript",
+  "sort.MySql": "MySql",
+  "sort.NextJs": "NextJs",
+  "sort.NodeJs": "NodeJs",
+  "sort.NPM": "NPM",
+  "sort.NuxtJs": "NuxtJs",
+  "sort.PHP": "PHP",
+  "sort.React": "React",
+  "sort.Typescript": "Typescript",
+  "sort.Vue": "Vue"
+}

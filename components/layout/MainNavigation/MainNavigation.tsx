@@ -57,28 +57,28 @@ const MainNavigation = () => {
         const BOTTOM:any = document.getElementById("BOTTOM")
         const handleRouteChange = (url:string) => {
 
-            if(url.indexOf("/posts") !== -1){
-                header.style.background = "none"
-                header.style.backdropFilter = "none"
-
-            }else{
-                header.style.background = "rgba(0,0,0,0.8)"
-                header.style.backdropFilter = "saturate(50%) blur(4px)"
-
-            }
-            if(url === "/"){
-                TOP.style.display = "none"
-                BOTTOM.style.display = "none"
-            }else{
-                TOP.style.display = "block"
-                BOTTOM.style.display = "block"
-            }
+            // if(url.indexOf("/posts") !== -1){
+            //     header.style.background = "none"
+            //     header.style.backdropFilter = "none"
+            //
+            // }else{
+            //     header.style.background = "rgba(0,0,0,0.8)"
+            //     header.style.backdropFilter = "saturate(50%) blur(4px)"
+            //
+            // }
+            // if(url === "/"){
+            //     TOP.style.display = "none"
+            //     BOTTOM.style.display = "none"
+            // }else{
+            //     TOP.style.display = "block"
+            //     BOTTOM.style.display = "block"
+            // }
         }
         router.events.on('routeChangeStart', handleRouteChange)
-        window.addEventListener("scroll", handleScroll, true)
+        // window.addEventListener("scroll", handleScroll, true)
         return () => {
             router.events.off('routeChangeStart', handleRouteChange)
-            window.removeEventListener("scroll", handleScroll, true)
+            // window.removeEventListener("scroll", handleScroll, true)
         }
     }, [])
     return (

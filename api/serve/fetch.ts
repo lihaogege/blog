@@ -9,14 +9,7 @@ let Data: any
 let headers: any
 
 export default async function fetcher(url: string, method: string, body: any, context: any) {
-    if (global.window) {
-        baseUrl = "" + url
-    } else {
-        baseUrl = env[process.env.APP_ENV].ENV_API + url
-    }
-
     method = method.toUpperCase();
-
     (()=>{
         // eslint-disable-next-line react-hooks/rules-of-hooks
         const cookie = useCookie(context) // 客户端为空即可
@@ -36,6 +29,7 @@ export default async function fetcher(url: string, method: string, body: any, co
         case "GET" :{
             if (body && url.search(/\?/) === -1) {
                 url = `${url}?${QS.stringify(body)}`;
+
                 Data = null
             }
             break;
@@ -48,6 +42,12 @@ export default async function fetcher(url: string, method: string, body: any, co
         default:{
             break;
         }
+    }
+
+    if (global.window) {
+        baseUrl = "" + url
+    } else {
+        baseUrl = env[process.env.APP_ENV].ENV_API + url
     }
 
     const response = await fetch(baseUrl, {

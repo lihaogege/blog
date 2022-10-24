@@ -3,6 +3,7 @@ import classes from "./Allposts.module.less"
 import PostsGrid from "../PostsGrid/PostsGrid";
 import {useRouter} from "next/router";
 import {BookOutlined,TagOutlined} from "@ant-design/icons";
+import {FormattedMessage} from "react-intl";
 
 type PropsType = {
     posts : Array<object>
@@ -71,7 +72,7 @@ const Allposts = (props:PropsType) => {
                                style={{background:randomColorHandler()}}
                                onClick={()=>switchCategoryHandler(item.catalogueName)}
                                className={postCategoryName === item.catalogueName ? classes["is-active"] : ""}>
-                               <span> {item.catalogueName}</span>
+                               <FormattedMessage id={`sort.${item.catalogueName}`}　defaultMessage={item.catalogueName} tagName="span"/>
                                <span style={{color: "#e91e63",marginLeft:"0.2rem"}}>{item.posts.length}</span>
                            </li>)}
                    </ul>

@@ -21,7 +21,7 @@ interface PropsType {
     }
 }
 
-const   PostContent = (props: PropsType) => {
+const PostContent = (props: PropsType) => {
     const [catalogueData,setCatalogue] = React.useState<any[]>([])
     React.useEffect(()=>{
        setTimeout(()=>{

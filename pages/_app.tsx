@@ -23,7 +23,6 @@ function MyApp({Component, pageProps}: AppProps) {
     return (
         <>
             <Provider store={store}>
-                    <PersistGate loading={null} persistor={persistor}>
                         <Layout>
                             <Head>
                                 <title>{"李昊翰的博客-关注web前端技术-前端技术博客"}</title>
@@ -33,8 +32,18 @@ function MyApp({Component, pageProps}: AppProps) {
                             <Component {...pageProps} />
                             <Search/>
                         </Layout>
-                    </PersistGate>
             </Provider>
+            {/*<Provider store={store}>*/}
+            {/*        <Layout>*/}
+            {/*            <Head>*/}
+            {/*                <title>{"李昊翰的博客-关注web前端技术-前端技术博客"}</title>*/}
+            {/*                <meta name="description" content="个人博客,李昊翰的博客,分享前端前沿技术,VUE,React,NodeJs,Typescript,框架全家桶,小程序等前端知识"/>*/}
+            {/*                <meta name="keywords" content="前端博客,个人博客,博客,李昊翰的博客,前端技术文档"/>*/}
+            {/*            </Head>*/}
+            {/*            <Component {...pageProps} />*/}
+            {/*            <Search/>*/}
+            {/*        </Layout>*/}
+            {/*</Provider>*/}
         </>
     )
 }

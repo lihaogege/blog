@@ -1,10 +1,15 @@
 @import "/styles/mixin";
+.main-wrapper{
+
+}
 .container{
-  width: 85%;
+  width: 70%;
   margin: var(--size-22) auto 0;
-  display: grid;
-  grid-template-columns: 86% 12%;
   justify-content: space-between;
+  position: relative;
+  .mixin_desktop({
+    width: 80%;
+  });
   .mixin_mobile({
     width: 100%;
   });
@@ -12,6 +17,10 @@
 
   }
   .container-right{
+    width: 10%;
+    position: absolute;
+    right: -12%;
+    top: 0;
     .container-right-bookmark div{
       //background-color: var(--color-grey-100);
     }
