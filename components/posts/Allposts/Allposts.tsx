@@ -64,7 +64,7 @@ const Allposts = (props:PropsType) => {
                <div className={`${classes["article-classification"]}`}>
                    <h2>
                        <BookOutlined style={{marginRight:"0.5rem"}}/>
-                       文章分类
+                       <FormattedMessage id={"global.article_sort"} defaultMessage="文章分类"/>
                    </h2>
                    <ul className={classes["classification-list"]}>
                        {props.posts.map((item:any,index)=>

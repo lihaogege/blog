@@ -1,12 +1,19 @@
 import React from 'react';
 import styles from "./styles.module.less"
+import {FormattedMessage} from "react-intl";
+
 const HeaderBg:React.FC<{title:string}> = ({title}) => {
 
     return (
         <>
             <div className={styles["header-container"]}>
                 <div className={styles["header-container-center-content"]}>
-                    <h1>{title}</h1>
+                    <FormattedMessage
+                        id='global.article'
+                        description='Article'
+                        defaultMessage='Article'
+                        tagName="h1" // DOM元素节点名称
+                    />
                 </div>
             </div>
         </>

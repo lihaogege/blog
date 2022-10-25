@@ -1,5 +1,7 @@
 {
   "global.home" : "首页",
+  "global.article": "Article - 文章",
+  "global.article_sort": "文章分类",
   "global.posts" : "帖子",
   "global.demo" : "实例",
   "global.contact" : "联系我",

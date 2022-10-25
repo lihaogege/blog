@@ -1,5 +1,7 @@
 {
   "global.home" : "Home",
+  "global.article": "Article",
+  "global.article_sort": "Article classification",
   "global.posts" : "posts",
   "global.demo" : "demo",
   "global.contact" : "contact me",

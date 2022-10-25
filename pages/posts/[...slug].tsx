@@ -1,4 +1,3 @@
-import {GetStaticProps, NextPage} from "next";
 import PostContent from "../../components/posts/post-detail/PostContent/PostContent";
 import {getAllPosts, getPostDetail} from "../../lib/posts-util";
 import Head from "next/head";

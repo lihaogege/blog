@@ -135,6 +135,12 @@ const PostContent = (props: PropsType) => {
             <div className="main-wrapper">
                 <div className={classes.container}>
                     <section className={classes["container-left"]}>
+                        <h1>相关文章</h1>
+                        <aside>
+                            广告位置
+                        </aside>
+                    </section>
+                    <section className={classes["container-center"]}>
                         <article className={classes.content}>
                             <PostHeader title={title} image={imagePath}/>
                             {/*// @ts-ignore*/}
@@ -143,7 +149,7 @@ const PostContent = (props: PropsType) => {
                     </section>
                     <section className={classes["container-right"]}>
                         <section className={classes["container-right-bookmark"]}>
-                                <Anchor offsetTop={88} showInkInFixed={true} className={classes.anchor}>
+                                <Anchor offsetTop={88} className={classes.anchor}>
                                     <h1>文章目录</h1>
                                     {catalogueData.map((item:any,index)=> <Link key={index} href={`#${item.id}`} title={item.title}>
                                         {item.children.map((itemChildren:any,indexx:number)=>

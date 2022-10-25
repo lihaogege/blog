@@ -62,17 +62,23 @@ function Deck({cards}:{cards:any}) {
     return (
         <>
             {props.map(({ x, y, rot, scale }, i) => (
-                <animated.div className={styles.deck} key={i} style={{ x, y }}>
-                    {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
-                    <animated.div
-                        {...bind(i)}
-                        onDoubleClick={()=> router.push({pathname:cards[i].href})}
-                        style={{
-                            transform: interpolate([rot, scale], trans),
-                            backgroundImage: `url(${cards[i].img})`,
-                        }}
-                    />
-                </animated.div>
+                <>
+                    <animated.div className={styles.deck} key={i} style={{ x, y }}>
+                        {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
+                        <animated.div
+                            {...bind(i)}
+                            onDoubleClick={()=> router.push({pathname:cards[i].href})}
+                            style={{
+                                transform: interpolate([rot, scale], trans),
+                            }}
+                        >
+                           <p style={{fontSize:"20px"}}>
+                               {cards[i].projectName}
+                           </p>
+                            <div style={{width:"100%",height:"200px",backgroundImage: `url(${cards[i].img})`,backgroundSize:"100%",backgroundRepeat:"no-repeat"}}/>
+                        </animated.div>
+                    </animated.div>
+                </>
             ))}
         </>
     )
